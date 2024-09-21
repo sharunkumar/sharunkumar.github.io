@@ -1,8 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
-import { Fade } from "react-reveal";
+import React, {useContext, useEffect, useState} from "react";
+import {Fade} from "react-reveal";
 import BlogCard from "../../components/blogCard/BlogCard";
 import StyleContext from "../../contexts/StyleContext";
-import { blogSection } from "../../portfolio";
+import {blogSection} from "../../portfolio";
 import "./Blog.scss";
 export default function Blogs() {
   const {isDark} = useContext(StyleContext);
@@ -61,8 +61,7 @@ export default function Blogs() {
         </div>
         <div className="blog-main-div">
           <div className="blog-text-div">
-            {!blogSection.displayMediumBlogs ||
-            mediumBlogs === "Error"
+            {!blogSection.displayMediumBlogs || mediumBlogs === "Error"
               ? blogSection.blogs.map((blog, i) => {
                   return (
                     <BlogCard
