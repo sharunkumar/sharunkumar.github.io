@@ -1,7 +1,10 @@
+import {configDotenv} from "dotenv";
 import download from "download";
 import favicons from "favicons";
 import fs from "fs/promises";
 import path from "path";
+
+configDotenv();
 
 let profile;
 
@@ -22,7 +25,7 @@ await fs.writeFile("public/avatar.png", download(profile.data.user.avatarUrl));
 
 const src = "public/avatar.png"; // Icon source file path.
 const dest = "./public"; // Output directory path.
-// const htmlBasename = "index.html"; // HTML file basename.
+const htmlBasename = "index-stub.html"; // HTML file basename.
 
 // // Configuration (see above in the README file).
 // const configuration = {
@@ -43,9 +46,12 @@ await Promise.all(
   ),
 );
 
-// await Promise.all(
-//   response.files.map(
-//     async file => await fs.writeFile(path.join(dest, file.name), file.contents),
-//   ),
-// );
-// await fs.writeFile(path.join(dest, htmlBasename), response.html.join("\n"));
+if (process.env.GENERATE_FILES != null) {
+  await Promise.all(
+    response.files.map(
+      async file =>
+        await fs.writeFile(path.join(dest, file.name), file.contents),
+    ),
+  );
+  await fs.writeFile(path.join(dest, htmlBasename), response.html.join("\n"));
+}
