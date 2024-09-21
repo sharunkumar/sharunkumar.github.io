@@ -6,7 +6,7 @@ import StyleContext from "../../contexts/StyleContext";
 import Loading from "../../containers/loading/Loading";
 export default function Projects() {
   const GithubRepoCard = lazy(
-    () => import("../../components/githubRepoCard/GithubRepoCard")
+    () => import("../../components/githubRepoCard/GithubRepoCard"),
   );
   const FailedLoading = () => null;
   const renderLoader = () => <Loading />;
@@ -28,7 +28,7 @@ export default function Projects() {
         })
         .catch(function (error) {
           console.error(
-            `${error} (because of this error, nothing is shown in place of Projects section. Also check if Projects section has been configured)`
+            `${error} (because of this error, nothing is shown in place of Projects section. Also check if Projects section has been configured)`,
           );
           setrepoFunction("Error");
         });
@@ -51,7 +51,7 @@ export default function Projects() {
             {repo.map((v, i) => {
               if (!v) {
                 console.error(
-                  `Github Object for repository number : ${i} is undefined`
+                  `Github Object for repository number : ${i} is undefined`,
                 );
               }
               return (

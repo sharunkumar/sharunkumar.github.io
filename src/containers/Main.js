@@ -31,7 +31,7 @@ const Main = () => {
     if (splashScreen.enabled) {
       const splashTimer = setTimeout(
         () => setIsShowingSplashAnimation(false),
-        splashScreen.duration
+        splashScreen.duration,
       );
       return () => {
         clearTimeout(splashTimer);

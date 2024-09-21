@@ -5,7 +5,7 @@ import Loading from "../loading/Loading";
 
 const renderLoader = () => <Loading />;
 const GithubProfileCard = lazy(
-  () => import("../../components/githubProfileCard/GithubProfileCard")
+  () => import("../../components/githubProfileCard/GithubProfileCard"),
 );
 export default function Profile() {
   const [prof, setrepo] = useState([]);
@@ -27,7 +27,7 @@ export default function Profile() {
           })
           .catch(function (error) {
             console.error(
-              `${error} (because of this error GitHub contact section could not be displayed. Contact section has reverted to default)`
+              `${error} (because of this error GitHub contact section could not be displayed. Contact section has reverted to default)`,
             );
             setProfileFunction("Error");
             openSource.showGithubProfile = false;

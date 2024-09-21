@@ -32,7 +32,7 @@ export default function Talks() {
                 slides_url: talk.slides_url,
                 event_url: talk.event_url,
                 image: talk.image,
-                isDark
+                isDark,
               }}
             />
           );

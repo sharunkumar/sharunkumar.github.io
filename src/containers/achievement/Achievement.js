@@ -42,7 +42,7 @@ export default function Achievement() {
                   description: card.subtitle,
                   image: card.image,
                   imageAlt: card.imageAlt,
-                  footer: card.footerLink
+                  footer: card.footerLink,
                 }}
               />
             );

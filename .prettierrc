@@ -1,5 +1,5 @@
 {
-	"trailingComma": "none",
+	"trailingComma": "all",
 	"bracketSpacing": false,
 	"arrowParens": "avoid",
 	"singleQuote": false,
