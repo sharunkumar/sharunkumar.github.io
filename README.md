@@ -23,15 +23,7 @@ docker run -t -p 3000:3000 sharunkumar.github.io:latest
 
 ## How To Use
 
-From your command line, clone and run developerFolio:
-
 ```bash
-# Clone this repository
-git clone https://github.com/saadpasta/developerFolio.git
-
-# Go into the repository
-cd developerFolio
-
 # Setup default environment variables
 
 # For Linux
@@ -55,7 +47,7 @@ Generate a classic GitHub personal access token following these [instructions](h
 Note: Configuring environment variables before deploying your portfolio is highly recommended as some components depend on API data.
 
 ```bash
-- DeveloperFolio
+- /
   - node_modules
   - public
   - src
@@ -100,50 +92,6 @@ MEDIUM_USERNAME = "YOUR MEDIUM USERNAME"
 - For Github Action, change the environment variable `MEDIUM_USERNAME` in `.github/workflows/deploy.yml`
 
 Set `displayMediumBlogs` to true or false in portofolio.js to display fetched Medium blogs, defaults to true.
-
-## Change and customize every section according to your need.
-
-#### Personalize page content in `/src/portfolio.js` & modify it as per your need. You will also need to modify `index.html` to change the title and metadata to provide accurate SEO for your personal portfolio.
-
-```javascript
-/* Change this file to get your Personal Porfolio */
-
-const greeting = {
-  /* Your Summary And Greeting Section */
-  title: "Hi all I'm Saad",
-  subTitle: emoji("A passionate Full Stack Software Developer 🚀"),
-  resumeLink: "https://drive.google.com/file/d/1ofFdKF_mqscH8WvXkSObnVvC9kK7Ldlu/view?usp=sharing"
-};
-
-const socialMediaLinks = {
-  /* Your Social Media Link */
-  github: "https://github.com/saadpasta",
-  linkedin: "https://www.linkedin.com/in/saadpasta/",
-  gmail: "saadpasta70@gmail.com",
-  gitlab: "https://gitlab.com/saadpasta",
-  facebook: "https://www.facebook.com/saad.pasta7"
-};
-
-
-const skillsSection = { .... }
-
-const techStack = { .... }
-
-const workExperience = { .... }
-
-const openSource = { .... }
-
-const bigProjects = { .... }
-
-const achievementSection = { .... }
-
-const blogSection = { .... }
-
-const contactInfo = { .... }
-
-const twitterDetails = { ... }
-
-```
 
 #### Resume upload
 

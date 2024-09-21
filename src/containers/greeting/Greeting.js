@@ -1,13 +1,12 @@
-import React, {useContext} from "react";
-import {Fade} from "react-reveal";
+import React, { useContext } from "react";
 import emoji from "react-easy-emoji";
-import "./Greeting.scss";
+import { Fade } from "react-reveal";
 import landingPerson from "../../assets/lottie/landingPerson";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
-import Button from "../../components/button/Button";
-import {illustration, greeting} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
+import { greeting, illustration } from "../../portfolio";
+import "./Greeting.scss";
 
 export default function Greeting() {
   const {isDark} = useContext(StyleContext);
@@ -37,7 +36,7 @@ export default function Greeting() {
                 {greeting.subTitle}
               </p>
               <SocialMedia />
-              <div className="button-greeting-div">
+              {/* <div className="button-greeting-div">
                 <Button text="Contact me" href="#contact" />
                 {greeting.resumeLink && (
                   <a
@@ -48,7 +47,7 @@ export default function Greeting() {
                     <Button text="Download my resume" />
                   </a>
                 )}
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="greeting-image-div">
