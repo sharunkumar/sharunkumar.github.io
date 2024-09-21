@@ -22,8 +22,8 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "start": "node fetch.js && react-scripts start",
-    "build": "node fetch.js && react-scripts build",
+    "start": "node fetch.mjs && react-scripts start",
+    "build": "node fetch.mjs && react-scripts build",
     "deploy": "gh-pages -b gh-pages -d build",
     "test": "react-scripts test",
     "update:check": "npm-check-updates --interactive --format group",

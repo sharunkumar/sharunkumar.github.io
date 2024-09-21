@@ -1,12 +1,14 @@
-fs = require("fs");
-const https = require("https");
-process = require("process");
-require("dotenv").config();
+import { configDotenv } from "dotenv";
+import { writeFile } from "fs";
+import { request } from "https";
+import { env } from "process";
 
-const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
-const GITHUB_USERNAME = process.env.GITHUB_USERNAME;
-const USE_GITHUB_DATA = process.env.USE_GITHUB_DATA;
-const MEDIUM_USERNAME = process.env.MEDIUM_USERNAME;
+configDotenv()
+
+const GITHUB_TOKEN = env.REACT_APP_GITHUB_TOKEN;
+const GITHUB_USERNAME = env.GITHUB_USERNAME;
+const USE_GITHUB_DATA = env.USE_GITHUB_DATA;
+const MEDIUM_USERNAME = env.MEDIUM_USERNAME;
 
 const ERR = {
   noUserName:
@@ -67,7 +69,7 @@ if (USE_GITHUB_DATA === "true") {
     }
   };
 
-  const req = https.request(default_options, res => {
+  const req = request(default_options, res => {
     let data = "";
 
     console.log(`statusCode: ${res.statusCode}`);
@@ -79,7 +81,7 @@ if (USE_GITHUB_DATA === "true") {
       data += d;
     });
     res.on("end", () => {
-      fs.writeFile("./public/profile.json", data, function (err) {
+      writeFile("./public/profile.json", data, function (err) {
         if (err) return console.log(err);
         console.log("saved file to public/profile.json");
       });
@@ -103,7 +105,7 @@ if (MEDIUM_USERNAME !== undefined) {
     method: "GET"
   };
 
-  const req = https.request(options, res => {
+  const req = request(options, res => {
     let mediumData = "";
 
     console.log(`statusCode: ${res.statusCode}`);
@@ -115,7 +117,7 @@ if (MEDIUM_USERNAME !== undefined) {
       mediumData += d;
     });
     res.on("end", () => {
-      fs.writeFile("./public/blogs.json", mediumData, function (err) {
+      writeFile("./public/blogs.json", mediumData, function (err) {
         if (err) return console.log(err);
         console.log("saved file to public/blogs.json");
       });
