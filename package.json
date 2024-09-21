@@ -7,7 +7,7 @@
     "colorthief": "^2.4.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.8",
-    "gh-pages": "^2.1.1",
+    "gh-pages": "^6.1.1",
     "jest-canvas-mock": "^2.5.2",
     "lottie-react": "^2.4.0",
     "react": "^16.10.2",
