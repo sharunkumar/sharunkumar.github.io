@@ -1,9 +1,9 @@
-import React, {useState, useEffect, useContext} from "react";
-import "./Blog.scss";
+import React, { useContext, useEffect, useState } from "react";
+import { Fade } from "react-reveal";
 import BlogCard from "../../components/blogCard/BlogCard";
-import {blogSection} from "../../portfolio";
-import {Fade} from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
+import { blogSection } from "../../portfolio";
+import "./Blog.scss";
 export default function Blogs() {
   const {isDark} = useContext(StyleContext);
   const [mediumBlogs, setMediumBlogs] = useState([]);
@@ -21,7 +21,7 @@ export default function Blogs() {
       : NaN;
   }
   useEffect(() => {
-    if (blogSection.displayMediumBlogs === "true") {
+    if (blogSection.displayMediumBlogs) {
       const getProfileData = () => {
         fetch("/blogs.json")
           .then(result => {
@@ -37,7 +37,7 @@ export default function Blogs() {
               `${error} (because of this error Blogs section could not be displayed. Blogs section has reverted to default)`
             );
             setMediumBlogsFunction("Error");
-            blogSection.displayMediumBlogs = "false";
+            blogSection.displayMediumBlogs = false;
           });
       };
       getProfileData();
@@ -61,7 +61,7 @@ export default function Blogs() {
         </div>
         <div className="blog-main-div">
           <div className="blog-text-div">
-            {blogSection.displayMediumBlogs !== "true" ||
+            {!blogSection.displayMediumBlogs ||
             mediumBlogs === "Error"
               ? blogSection.blogs.map((blog, i) => {
                   return (
