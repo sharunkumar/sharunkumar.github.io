@@ -22,6 +22,7 @@
     "build": "node fetch.mjs && react-scripts build",
     "deploy": "gh-pages -b gh-pages -d build",
     "update:check": "npm-check-updates --interactive --format group",
+    "update:favicons": "node fetch.mjs && node favicons.mjs",
     "eject": "react-scripts eject",
     "format": "prettier --write \"./**/*.{js,css,json,scss}\"",
     "check-format": "prettier -c \"./**/*.{js,css,json,scss}\""
