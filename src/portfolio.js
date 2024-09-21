@@ -127,7 +127,7 @@ const educationInfo = {
   schools: [
     {
       schoolName: "Northeastern University",
-      logo: require("./assets/images/northeasternLogo.jpg"),
+      logo: require("./assets/images/northeasternLogo.png"),
       subHeader: "Master of Science in Information Systems",
       duration: "September 2022 - December 2024",
       // desc: "Participated in the research of XXX and published 3 papers.",
