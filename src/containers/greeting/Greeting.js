@@ -1,11 +1,12 @@
-import React, { useContext } from "react";
+import React, {useContext} from "react";
 import emoji from "react-easy-emoji";
-import { Fade } from "react-reveal";
+import {Fade} from "react-reveal";
 import landingPerson from "../../assets/lottie/landingPerson";
+import Button from "../../components/button/Button";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import StyleContext from "../../contexts/StyleContext";
-import { greeting, illustration } from "../../portfolio";
+import {greeting, illustration, resumeSection} from "../../portfolio";
 import "./Greeting.scss";
 
 export default function Greeting() {
@@ -13,6 +14,7 @@ export default function Greeting() {
   if (!greeting.displayGreeting) {
     return null;
   }
+  const {display: displayResume} = resumeSection;
   return (
     <Fade bottom duration={1000} distance="40px">
       <div className="greet-main" id="greeting">
@@ -36,18 +38,20 @@ export default function Greeting() {
                 {greeting.subTitle}
               </p>
               <SocialMedia />
-              {/* <div className="button-greeting-div">
-                <Button text="Contact me" href="#contact" />
-                {greeting.resumeLink && (
-                  <a
-                    href={require("./resume.pdf")}
-                    download="Resume.pdf"
-                    className="download-link-button"
-                  >
-                    <Button text="Download my resume" />
-                  </a>
-                )}
-              </div> */}
+              {displayResume && (
+                <div className="button-greeting-div">
+                  <Button text="Contact me" href="#contact" />
+                  {greeting.resumeLink && (
+                    <a
+                      href={require("./resume.pdf")}
+                      download="Resume.pdf"
+                      className="download-link-button"
+                    >
+                      <Button text="Download my resume" />
+                    </a>
+                  )}
+                </div>
+              )}
             </div>
           </div>
           <div className="greeting-image-div">
