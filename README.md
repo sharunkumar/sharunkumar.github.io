@@ -27,9 +27,9 @@ docker run -t -p 3000:3000 sharunkumar.github.io:latest
 # Setup default environment variables
 
 # For Linux
-cp env.example .env
+cp .env.example .env
 # For Windows
-copy env.example .env
+copy .env.example .env
 
 # Install dependencies
 npm install
@@ -52,7 +52,7 @@ Note: Configuring environment variables before deploying your portfolio is highl
   - public
   - src
   - .env         <-- create it here
-  - env.example  <-- this is the base file
+  - .env.example  <-- this is the base file
   - .gitignore
   - package-lock.json
   - package.json
