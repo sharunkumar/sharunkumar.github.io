@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.9d869833.css",
-    "main.js": "/static/js/main.6796a46e.js",
+    "main.js": "/static/js/main.c352fd42.js",
     "static/css/487.bb36206c.chunk.css": "/static/css/487.bb36206c.chunk.css",
     "static/js/487.57270195.chunk.js": "/static/js/487.57270195.chunk.js",
     "static/css/990.c6a7ee28.chunk.css": "/static/css/990.c6a7ee28.chunk.css",
@@ -9,6 +9,7 @@
     "static/media/northeasternLogo.png": "/static/media/northeasternLogo.7479e9578656c7a5b7c1.png",
     "static/media/Montserrat-Regular.ttf": "/static/media/Montserrat-Regular.3cd786652b8a2e9d41f2.ttf",
     "static/media/Agustina.woff": "/static/media/Agustina.eb0c59dda4cc308cba96.woff",
+    "static/media/sastraLogo.png": "/static/media/sastraLogo.dbbab77408b472aec49c.png",
     "static/media/manOnTable.svg": "/static/media/manOnTable.8f117eb207e57ed8f89d67d595aceb45.svg",
     "static/media/contactMailDark.svg": "/static/media/contactMailDark.1db650d351729a0f17b4e3104e6a7b7a.svg",
     "static/media/quoraLogo.png": "/static/media/quoraLogo.85eb29f4d52320c8ed99.png",
@@ -25,7 +26,7 @@
     "index.html": "/index.html",
     "static/media/talksCardBack.svg": "/static/media/talksCardBack.73ed1545d58273ba64b0.svg",
     "main.9d869833.css.map": "/static/css/main.9d869833.css.map",
-    "main.6796a46e.js.map": "/static/js/main.6796a46e.js.map",
+    "main.c352fd42.js.map": "/static/js/main.c352fd42.js.map",
     "487.bb36206c.chunk.css.map": "/static/css/487.bb36206c.chunk.css.map",
     "487.57270195.chunk.js.map": "/static/js/487.57270195.chunk.js.map",
     "990.c6a7ee28.chunk.css.map": "/static/css/990.c6a7ee28.chunk.css.map",
@@ -33,6 +34,6 @@
   },
   "entrypoints": [
     "static/css/main.9d869833.css",
-    "static/js/main.6796a46e.js"
+    "static/js/main.c352fd42.js"
   ]
 }
