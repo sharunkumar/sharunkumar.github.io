@@ -48,74 +48,194 @@ const socialMediaLinks = {
 // Skills Section
 
 const skillsSection = {
-  title: "What I do",
-  subTitle: "CRAZY FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK",
-  skills: [
-    emoji(
-      "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications",
-    ),
-    emoji("⚡ Progressive Web Applications ( PWA ) in normal and SPA Stacks"),
-    emoji(
-      "⚡ Integration of third party services such as Firebase/ AWS / Digital Ocean",
-    ),
-  ],
+  title: "Skills & Technologies",
+  // subTitle: "CRAZY FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK",
+  // skills: [
+  //   emoji(
+  //     "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications",
+  //   ),
+  //   emoji("⚡ Progressive Web Applications ( PWA ) in normal and SPA Stacks"),
+  //   emoji(
+  //     "⚡ Integration of third party services such as Firebase/ AWS / Digital Ocean",
+  //   ),
+  // ],
 
   /* Make Sure to include correct Font Awesome Classname to view your icon
 https://fontawesome.com/icons?d=gallery */
 
   softwareSkills: [
     {
-      skillName: "html-5",
-      fontAwesomeClassname: "fab fa-html5",
-    },
-    {
-      skillName: "css3",
-      fontAwesomeClassname: "fab fa-css3-alt",
-    },
-    {
-      skillName: "sass",
-      fontAwesomeClassname: "fab fa-sass",
+      skillName: "Java",
+      fontAwesomeClassname: "fab fa-java",
     },
     {
       skillName: "JavaScript",
       fontAwesomeClassname: "fab fa-js",
     },
     {
-      skillName: "reactjs",
+      skillName: "TypeScript",
+      fontAwesomeClassname: "fas fa-code",
+    },
+    {
+      skillName: "C#",
+      fontAwesomeClassname: "fab fa-microsoft",
+    },
+    {
+      skillName: "Rust",
+      fontAwesomeClassname: "fas fa-cogs",
+    },
+    {
+      skillName: "Python",
+      fontAwesomeClassname: "fab fa-python",
+    },
+    // {
+    //   skillName: "C",
+    //   fontAwesomeClassname: "fas fa-code",
+    // },
+    // {
+    //   skillName: "C++",
+    //   fontAwesomeClassname: "fas fa-code",
+    // },
+    {
+      skillName: "Bash Scripting",
+      fontAwesomeClassname: "fas fa-terminal",
+    },
+    {
+      skillName: "PowerShell",
+      fontAwesomeClassname: "fas fa-terminal",
+    },
+    {
+      skillName: "GNU/Linux",
+      fontAwesomeClassname: "fab fa-linux",
+    },
+    {
+      skillName: "Windows",
+      fontAwesomeClassname: "fab fa-windows",
+    },
+    {
+      skillName: "React",
       fontAwesomeClassname: "fab fa-react",
     },
     {
-      skillName: "nodejs",
-      fontAwesomeClassname: "fab fa-node",
+      skillName: "Node.js",
+      fontAwesomeClassname: "fab fa-node-js",
     },
     {
-      skillName: "swift",
-      fontAwesomeClassname: "fab fa-swift",
+      skillName: "HTML5",
+      fontAwesomeClassname: "fab fa-html5",
     },
     {
-      skillName: "npm",
-      fontAwesomeClassname: "fab fa-npm",
+      skillName: "CSS3",
+      fontAwesomeClassname: "fab fa-css3-alt",
     },
     {
-      skillName: "sql-database",
+      skillName: "SCSS",
+      fontAwesomeClassname: "fab fa-sass",
+    },
+    // {
+    //   skillName: "Redux",
+    //   fontAwesomeClassname: "fas fa-layer-group",
+    // },
+    {
+      skillName: "Express",
+      fontAwesomeClassname: "fas fa-server",
+    },
+    // {
+    //   skillName: "jQuery",
+    //   fontAwesomeClassname: "fab fa-js",
+    // },
+    // {
+    //   skillName: "REST APIs",
+    //   fontAwesomeClassname: "fas fa-exchange-alt",
+    // },
+    // {
+    //   skillName: "Firebase",
+    //   fontAwesomeClassname: "fas fa-fire",
+    // },
+    {
+      skillName: "Git",
+      fontAwesomeClassname: "fab fa-git-alt",
+    },
+    {
+      skillName: "GitHub",
+      fontAwesomeClassname: "fab fa-github",
+    },
+    {
+      skillName: "GitLab",
+      fontAwesomeClassname: "fab fa-gitlab",
+    },
+    {
+      skillName: "Jenkins",
+      fontAwesomeClassname: "fab fa-jenkins",
+    },
+    // {
+    //   skillName: "Visual Studio",
+    //   fontAwesomeClassname: "fas fa-code",
+    // },
+    // {
+    //   skillName: "IntelliJ",
+    //   fontAwesomeClassname: "fas fa-code",
+    // },
+    // {
+    //   skillName: "VSCode",
+    //   fontAwesomeClassname: "fas fa-code",
+    // },
+    // {
+    //   skillName: "PyCharm",
+    //   fontAwesomeClassname: "fas fa-code",
+    // },
+    // {
+    //   skillName: "Sublime Text",
+    //   fontAwesomeClassname: "fas fa-code",
+    // },
+    // {
+    //   skillName: "Agile Methodology",
+    //   fontAwesomeClassname: "fas fa-sync-alt",
+    // },
+    {
+      skillName: "Figma",
+      fontAwesomeClassname: "fab fa-figma",
+    },
+    // {
+    //   skillName: "Moqups",
+    //   fontAwesomeClassname: "fas fa-pencil-ruler",
+    // },
+    // {
+    //   skillName: "Balsamiq Wireframes",
+    //   fontAwesomeClassname: "fas fa-pencil-ruler",
+    // },
+    // {
+    //   skillName: "Axure RP",
+    //   fontAwesomeClassname: "fas fa-pencil-ruler",
+    // },
+    // {
+    //   skillName: "OpenAI",
+    //   fontAwesomeClassname: "fas fa-robot",
+    // },
+    // {
+    //   skillName: "ChatGPT",
+    //   fontAwesomeClassname: "fas fa-comment-dots",
+    // },
+    // {
+    //   skillName: "Midjourney",
+    //   fontAwesomeClassname: "fas fa-image",
+    // },
+    {
+      skillName: "SQL Server",
       fontAwesomeClassname: "fas fa-database",
     },
+    // {
+    //   skillName: "PostgreSQL",
+    //   fontAwesomeClassname: "fas fa-database",
+    // },
     {
-      skillName: "aws",
-      fontAwesomeClassname: "fab fa-aws",
+      skillName: "MongoDB",
+      fontAwesomeClassname: "fas fa-leaf",
     },
-    {
-      skillName: "firebase",
-      fontAwesomeClassname: "fas fa-fire",
-    },
-    {
-      skillName: "python",
-      fontAwesomeClassname: "fab fa-python",
-    },
-    {
-      skillName: "docker",
-      fontAwesomeClassname: "fab fa-docker",
-    },
+    // {
+    //   skillName: "SQLite",
+    //   fontAwesomeClassname: "fas fa-database",
+    // },
   ],
   display: true, // Set false to hide this section, defaults to true
 };
