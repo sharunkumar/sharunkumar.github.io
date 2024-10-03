@@ -45,56 +45,6 @@ const socialMediaLinks = {
   display: true, // Set true to display this section, defaults to false
 };
 
-const skills = [
-  ["Java", "fab fa-java"],
-  ["JavaScript", "fab fa-js"],
-  ["TypeScript", "fas fa-code"],
-  ["C#", "fab fa-microsoft"],
-  ["Rust", "fas fa-cogs"],
-  ["Python", "fab fa-python"],
-  // ["C", "fas fa-code"],
-  // ["C++", "fas fa-code"],
-  ["Bash Scripting", "fas fa-terminal"],
-  ["PowerShell", "fas fa-terminal"],
-  ["GNU/Linux", "fab fa-linux"],
-  ["Windows", "fab fa-windows"],
-  ["React", "fab fa-react"],
-  ["Node.js", "fab fa-node-js"],
-  ["HTML5", "fab fa-html5"],
-  ["CSS3", "fab fa-css3-alt"],
-  ["SCSS", "fab fa-sass"],
-  // ["Redux", "fas fa-layer-group"],
-  ["Express", "fas fa-server"],
-  // ["jQuery", "fab fa-js"],
-  // ["REST APIs", "fas fa-exchange-alt"],
-  // ["Firebase", "fas fa-fire"],
-  ["Git", "fab fa-git-alt"],
-  ["GitHub", "fab fa-github"],
-  ["GitLab", "fab fa-gitlab"],
-  ["Jenkins", "fab fa-jenkins"],
-  // ["Visual Studio", "fas fa-code"],
-  // ["IntelliJ", "fas fa-code"],
-  // ["VSCode", "fas fa-code"],
-  // ["PyCharm", "fas fa-code"],
-  // ["Sublime Text", "fas fa-code"],
-  // ["Agile Methodology", "fas fa-sync-alt"],
-  ["Figma", "fab fa-figma"],
-  // ["Moqups", "fas fa-pencil-ruler"],
-  // ["Balsamiq Wireframes", "fas fa-pencil-ruler"],
-  // ["Axure RP", "fas fa-pencil-ruler"],
-  // ["OpenAI", "fas fa-robot"],
-  // ["ChatGPT", "fas fa-comment-dots"],
-  // ["Midjourney", "fas fa-image"],
-  ["SQL Server", "fas fa-database"],
-  // ["PostgreSQL", "fas fa-database"],
-  ["MongoDB", "fas fa-leaf"],
-];
-
-const softwareSkills = skills.map(([skillName, fontAwesomeClassname]) => ({
-  skillName,
-  fontAwesomeClassname,
-}));
-
 const skillsSection = {
   title: "Skills & Technologies",
   // subTitle: "CRAZY FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK",
@@ -111,7 +61,6 @@ const skillsSection = {
   /* Make Sure to include correct Font Awesome Classname to view your icon
 https://fontawesome.com/icons?d=gallery */
 
-  softwareSkills,
   display: true, // Set false to hide this section, defaults to true
 };
 
