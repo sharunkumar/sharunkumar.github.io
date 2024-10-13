@@ -1,0 +1,182 @@
+{
+  "basics": {
+    "name": "Sharun Kumar",
+    "label": "Stack Developer",
+    "image": "/me_avatar.jpg",
+    "email": "sharun@sharunkumar.com",
+    "phone": "+1 857-891-9600",
+    "url": "https://sharunkumar.com",
+    "summary": "Software Engineer with 6+ years of experience in building web, desktop and mobile apps and services, always aspiring to work in new technologies and collaborate with like-minded professionals and make a positive impact in the world one line of code at a time.",
+    "theme": "default",
+    "location": {
+      "address": "",
+      "postalCode": "94536",
+      "city": "Bay Area",
+      "countryCode": "USA",
+      "region": "United States"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "sharun-kumar-ks",
+        "url": "https://www.linkedin.com/in/sharun-kumar-ks/"
+      },
+      {
+        "network": "X",
+        "username": "roonshady",
+        "url": "https://x.com/roonshady"
+      },
+      {
+        "network": "GitHub",
+        "username": "sharunkumar",
+        "url": "https://github.com/sharunkumar"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Tesla",
+      "position": "Fullstack Developer Intern",
+      "location_type": "On site",
+      "location": "Fremont, CA, USA",
+      "url": "https://www.tesla.com/",
+      "startDate": "2024-01-08",
+      "endDate": "2024-08-30",
+      "summary": "Developing and maintaining web applications using Next.js for the frontend and Golang for the backend. Collaborating with the team to implement new features and fix bugs. Working extensively with GitHub CI and Docker for deployment and containerization.",
+      "highlights": [
+        "Improved website performance by optimizing Next.js and Golang code",
+        "Streamlined deployment processes using GitHub CI and Docker"
+      ],
+      "responsibilities": [
+        "Developed and maintained web applications using Next.js for the frontend and Golang for the backend. Collaborated with the team to implement new features and fix bugs.",
+        "Assisted in debugging and optimizing front-end and back-end code to ensure smooth user experiences.",
+        "Participated in code reviews and contributed to improving coding standards within the team.",
+        "Implemented and maintained CI/CD pipelines using GitHub CI for automated testing and deployment.",
+        "Containerized applications using Docker for consistent development and production environments."
+      ],
+      "achievements": [
+        "Was part of the core team that successfully completed a critical project within a tight deadline, demonstrating strong teamwork and high engineering throughput.",
+        "Contributed high volume of PRs and quality code, consistently delivering value to the team and project."
+      ],
+      "skills": [
+        "Next.js",
+        "Golang",
+        "GitHub",
+        "CI/CD",
+        "MySQL",
+        "Docker",
+        "Jenkins"
+      ]
+    },
+    {
+      "name": "GoFrugal Technologies",
+      "position": "Senior Software Engineer",
+      "location_type": "On site",
+      "location": "Chennai, India",
+      "url": "https://www.gofrugal.com/",
+      "startDate": "2017-06-19",
+      "endDate": "2022-07-07",
+      "summary": "Developing and maintaining software applications using C# and .NET technologies. Collaborating with cross-functional teams to ensure quality and timely delivery of software solutions, with a focus on database optimization and build pipeline automation.",
+      "highlights": [
+        "Implemented database optimizations that improved query performance by 40%",
+        "Streamlined build pipelines, reducing deployment time by 25%"
+      ],
+      "responsibilities": [
+        "Developed and maintained backend services using C# and .NET framework.",
+        "Designed and optimized database schemas and queries for improved performance.",
+        "Implemented and maintained automated build and deployment pipelines.",
+        "Collaborated with team members to ensure code quality and adherence to best practices.",
+        "Participated in daily stand-ups and bi-weekly sprint planning meetings to ensure alignment with project goals."
+      ],
+      "achievements": [
+        "Successfully implemented a suite of automation tools that significantly reduced manual processes in the development workflow.",
+        "Led a project to refactor and optimize a core application, resulting in a 30% improvement in overall system performance."
+      ],
+      "skills": [
+        "C#",
+        ".NET",
+        "SQL Server",
+        "Jenkins",
+        "CI/CD"
+      ]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Local Coding Club",
+      "position": "Volunteer",
+      "url": "https://codingclub.com/",
+      "startDate": "2021-01-01",
+      "endDate": "2022-01-01",
+      "summary": "Helped organize coding workshops and mentored new members.",
+      "highlights": [
+        "Awarded 'Volunteer of the Month'"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Northeastern University",
+      "url": "https://www.northeastern.edu/",
+      "area": "Information Systems",
+      "studyType": "Master",
+      "startDate": "2022",
+      "endDate": "2024"
+    },
+    {
+      "institution": "Sastra University",
+      "url": "http://sastra.edu/",
+      "area": "Computer Science",
+      "studyType": "Bachelor",
+      "startDate": "2013",
+      "endDate": "2017",
+      "score": "3.9",
+      "courses": [
+        "SE201 - Advanced Software Development",
+        "SE202 - Software Architecture and Design"
+      ]
+    }
+  ],
+  "certificates_show": false,
+  "certificates": [
+    {
+      "name": "Full Stack Web Development",
+      "date": "2023-05-01",
+      "issuer": "Online University",
+      "url": "https://onlineuniversity.com/certificates/fullstack"
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "Spanish",
+      "fluency": "Intermediate"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Technology",
+      "keywords": [
+        "AI",
+        "Blockchain"
+      ]
+    }
+  ],
+  "references": [
+    {
+      "name": "Jane Smith",
+      "reference": "Reference…"
+    }
+  ],
+  "projects": [
+    "https://github.com/sharunkumar/janitor",
+    "https://github.com/sharunkumar/voyager",
+    "https://github.com/sharunkumar/sharunkumar.github.io",
+    "https://github.com/sharunkumar/flyctl-bin",
+    "https://github.com/sharunkumar/archlinux-docker-action",
+    "https://github.com/sharunkumar/AdventOfCode"
+  ]
+}

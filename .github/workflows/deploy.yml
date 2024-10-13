@@ -1,41 +1,41 @@
-name: Build and Deploy
-env:
-  CI: false
-  GITHUB_USERNAME: ${{ github.repository_owner }}
-  REACT_APP_GITHUB_TOKEN: ${{ github.token }} # This is automatically set by Github Actions
-  USE_GITHUB_DATA: "true"
-  MEDIUM_USERNAME: "sharunkumarks" # Change this to your medium username
+name: Deploy to GitHub Pages
+
 on:
-  workflow_dispatch:
+  # Trigger the workflow every time you push to the `main` branch
+  # Using a different branch name? Replace `main` with your branch’s name
   push:
-    branches:
-      - main
+    branches: [main]
+  # Allows you to run this workflow manually from the Actions tab on GitHub.
+  workflow_dispatch:
+
+# Allow this job to clone the repo and create a page deployment
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v3 # If you're using actions/checkout@v3 you must set persist-credentials to false in most cases for the deployment to work correctly.
+      - name: Checkout your repository using git
+        uses: actions/checkout@v4
+      - name: Install, build, and upload your site output
+        uses: withastro/action@v2
         with:
-          persist-credentials: false
+          package-manager: bun
+        # with:
+        # path: . # The root location of your Astro project inside the repository. (optional)
+        # node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 18. (optional)
+        # package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
 
-      - name: Setup Node.js 🔧
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18.x
-
-      - name: Update npm 🚀
-        run: npm install -g npm@latest
-
-      - name: Install and Build 🔧 # Build the Project
-        run: |
-          npm ci
-          npm run build
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          token: ${{ github.token }} # This is provided by GitHub.
-          branch: gh-pages # The branch the action should deploy to.
-          folder: build # The folder the action should deploy.
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

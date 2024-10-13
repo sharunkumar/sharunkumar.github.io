@@ -1,0 +1,95 @@
+---
+import Git from "@/icons/git.astro";
+import Arrow from "@/icons/Arrow.astro";
+import Section from "../Section.astro";
+
+import { projects } from "@cv";
+import { fetchAllProjects } from "@/scripts/fetch-projects";
+
+const myGithubProjects = await fetchAllProjects(projects);
+---
+
+<Section className={Astro.props.className} title="Projects">
+  <div class="grid grid-cols-1 gap-3 md:grid-cols-2 print:flex print:flex-col">
+    {
+      myGithubProjects.map(
+        ({ project: { name, url, description }, languages }) => {
+          return (
+            <div
+              role="contentinfo"
+              class="grid-span-1 relative flex flex-col rounded-md bg-skin-button-muted/50 p-5 shadow-sm ring-1 ring-skin-muted"
+            >
+              <div class="flex items-center justify-between space-x-[10px]">
+                <div class="flex items-center gap-2">
+                  <div class="flex items-center gap-[6px] text-skin-base">
+                    <span>{name}</span>
+                  </div>
+                </div>
+
+                <a
+                  href={url}
+                  title="View Source Code"
+                  target="_blank"
+                  rel="noopener"
+                  class="text-skin-hue opacity-75 transition-opacity duration-100 hover:opacity-100"
+                >
+                  <Git />
+                </a>
+              </div>
+
+              <p class="py-3 text-sm text-skin-base">{description}</p>
+              <div
+                class="flex flex-wrap gap-2 print:hidden"
+                aria-label="Technologies used"
+              >
+                {Object.keys(languages).map((lang) => {
+                  return (
+                    <span class="flex items-center gap-1 rounded-md border border-solid border-skin-hue/20 bg-skin-button-accent/20 px-2 py-0.5 text-xs text-skin-hue print:border-none print:bg-transparent print:p-0 print:text-zinc-800">
+                      {lang}
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        },
+      )
+    }
+  </div>
+</Section>
+
+<style>
+  ul {
+    @apply ml-4 list-disc space-y-1;
+    li {
+      @apply text-skin-muted;
+    }
+  }
+
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    font-size: 0.6rem;
+  }
+
+  footer span {
+    border-radius: 6px;
+    background: #eee;
+    color: #444;
+    font-size: 0.6rem;
+    font-weight: 500;
+    padding: 0.2rem 0.6rem;
+  }
+  @keyframes flicker {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.25;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>

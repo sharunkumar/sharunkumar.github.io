@@ -1,59 +1,39 @@
 {
-  "homepage": "https://sharunkumar.github.io/",
-  "name": "sharunkumar.github.io",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "colorthief": "^2.4.0",
-    "gh-pages": "^6.1.1",
-    "lottie-react": "^2.4.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-easy-emoji": "^1.8.1",
-    "react-headroom": "^3.2.1",
-    "react-icons": "^5.3.0",
-    "react-scripts": "^5.0.1",
-    "react-test-renderer": "^18.3.1",
-    "react-twitter-embed": "4.0.4",
-    "sass": "^1.79.3"
-  },
+  "name": "minimalist-portfolio-json",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "predeploy": "npm run build",
-    "start": "node fetch.mjs && react-scripts start",
-    "build": "node fetch.mjs && react-scripts build",
-    "deploy": "gh-pages -b gh-pages -d build",
-    "update:check": "npm-check-updates --interactive --format group",
-    "update:favicons": "node fetch.mjs && node favicons.mjs",
-    "eject": "react-scripts eject",
-    "format": "prettier --write \"./**/*.{js,css,json,scss}\"",
-    "check-format": "prettier -c \"./**/*.{js,css,json,scss}\""
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "generate:favicons": "bun src/scripts/generate-favicons.ts"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.3%",
-      "not ie 11",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      ">0.3%",
-      "not ie 11",
-      "not dead",
-      "not op_mini all",
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "dotenv": "^16.4.5",
+  "dependencies": {
+    "@astrojs/check": "0.9.4",
+    "@astrojs/react": "^3.6.2",
+    "@astrojs/tailwind": "^5.1.2",
+    "@octokit/rest": "^21.0.2",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "astro": "4.16.2",
+    "astro-font-picker": "^0.2.1",
     "download": "^8.0.0",
     "favicons": "^7.2.0",
-    "npm-check-updates": "^17.1.2",
-    "prettier": "^3.3.3"
+    "hotkeypad": "0.1.1",
+    "prettier-plugin-tailwindcss": "^0.6.8",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.3.0",
+    "tailwindcss": "^3.4.13",
+    "typescript": "5.6.3"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.1.11",
+    "@types/download": "^8.0.5",
+    "@types/node": "^22.7.5",
+    "prettier": "^3.3.3",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }
