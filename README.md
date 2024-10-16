@@ -1,6 +1,6 @@
 ## Print-friendly portfolio CV
 
-## 🛠️ Stack
+## 🛠️ Stack & Tech
 
 - [**Astro**](https://astro.build/) - The next-gen web framework.
 - [**Typescript**](https://www.typescriptlang.org/) - JavaScript with type syntax.
@@ -25,7 +25,6 @@ bun src/scripts/generate-favicons.ts
 ### Launch the Development Server:
 
 ```bash
-# Enjoy the results
 bun install
 bun dev
 ```
@@ -43,5 +42,7 @@ Change the data-theme of `cv.json` and choose one of the colour themes defined i
 | ⚙️  | `dev` o `start` | Launches a local development server at `localhost:4321`.       |
 | ⚙️  | `build`         | Checks for errors and creates a production build in `./dist/`. |
 | ⚙️  | `preview`       | Local preview at `localhost:4321`                              |
+
+---
 
 Based on https://github.com/Smilesharks/dev-portfolio
