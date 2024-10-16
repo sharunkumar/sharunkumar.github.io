@@ -13,7 +13,7 @@ const myGithubProjects = await fetchAllProjects(projects);
   <div class="grid grid-cols-1 gap-3 md:grid-cols-2 print:flex print:flex-col">
     {
       myGithubProjects.map(
-        ({ project: { name, url, description }, languages }) => {
+        ({ project: { name, html_url, description }, languages }) => {
           return (
             <div
               role="contentinfo"
@@ -27,7 +27,7 @@ const myGithubProjects = await fetchAllProjects(projects);
                 </div>
 
                 <a
-                  href={url}
+                  href={html_url}
                   title="View Source Code"
                   target="_blank"
                   rel="noopener"
