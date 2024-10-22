@@ -52,7 +52,7 @@ import { work } from "@cv"
                 </div>
 
                 {(responsibilities || achievements) && (
-                <div x-show="expanded" x-collapse class="flex flex-col gap-4">
+                <div x-show="expanded" x-collapse class="flex flex-col gap-4 print:hidden">
                   {responsibilities && <ExperienceSubSection title="Responsibilities" content={responsibilities} />}
 
                   {achievements && <ExperienceSubSection title="Achievements" content={achievements} />}
