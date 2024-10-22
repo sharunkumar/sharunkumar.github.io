@@ -1,4 +1,5 @@
 ---
+import { ExperienceSubSection } from "../ExperienceSubSection"
 import Section from "../Section.astro"
 import { work } from "@cv"
 
@@ -42,45 +43,19 @@ import { work } from "@cv"
                   {location} {location && location_type && '-'} {location_type}
                 </div>
               )}
-              <div class="mt-4 print:gap-0 flex flex-col gap-4 print:text-xs text-sm" x-data="{ expanded: false }">
-                {summary && (
-                  <div class="flex flex-col gap-1">
-                    <h4>Summary:</h4>
-                    <ul class="text-skin-muted [&>li]:ml-4 flex list-disc flex-col gap-2">
-                      {Array.isArray(summary) ? (
-                        summary.map(item => (
-                          {item}
-                        ))
-                      ) : (
-                        <li>{summary}</li>
-                      )}
-                    </ul>
-                  </div>
-                )}
+              <div class="mt-4 print:gap-1 flex flex-col gap-2 print:text-xs text-sm" x-data="{ expanded: false }">
+                {summary && <ExperienceSubSection title="Summary" content={summary} />}
+
+                <div class="print:block hidden">
+                  {responsibilities && <ExperienceSubSection title="Responsibilities" content={responsibilities} />}
+                  {achievements && <ExperienceSubSection title="Achievements" content={achievements} />}
+                </div>
 
                 {(responsibilities || achievements) && (
-                <div x-show="expanded" x-collapse class="flex flex-col gap-4">
-                  {responsibilities && (
-                    <div class="flex flex-col gap-1">
-                      <h4>Responsibilities:</h4>
-                      <ul class="text-skin-muted [&>li]:ml-4 flex list-disc flex-col gap-1">
-                        {responsibilities.map(responsibility => (
-                          <li>{responsibility}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
+                <div x-show="expanded" x-collapse class="flex flex-col gap-4 print:hidden">
+                  {responsibilities && <ExperienceSubSection title="Responsibilities" content={responsibilities} />}
 
-                  {achievements && (
-                    <div class="flex flex-col gap-1">
-                      <h4>Achievements:</h4>
-                      <ul class="text-skin-muted [&>li]:ml-4 flex list-disc flex-col gap-1">
-                        {achievements.map(achievement => (
-                          <li>{achievement}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
+                  {achievements && <ExperienceSubSection title="Achievements" content={achievements} />}
                 </div>
                 )}
                 <button @click="expanded = !expanded" class="print:hidden group/more w-fit cursor-pointer items-center justify-center text-skin-muted gap-1.5 text-xs underline transition-all hover:text-skin-base flex">
@@ -104,8 +79,6 @@ import { work } from "@cv"
     })}
   </ul>  
 </Section>
-<script is:inline defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
-<script is:inline defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 <style>
   li::marker {

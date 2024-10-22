@@ -18,15 +18,11 @@
     "@astrojs/react": "^3.6.2",
     "@astrojs/tailwind": "^5.1.2",
     "@octokit/rest": "^21.0.2",
-    "@types/react": "^18.3.11",
-    "@types/react-dom": "^18.3.1",
     "astro": "4.16.6",
-    "astro-font-picker": "^0.2.1",
     "download": "^8.0.0",
     "favicons": "^7.2.0",
     "hotkeypad": "0.1.1",
     "nullthrows": "^1.1.1",
-    "prettier-plugin-tailwindcss": "^0.6.8",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-github-calendar": "^4.5.0",
@@ -38,9 +34,12 @@
     "@types/bun": "^1.1.11",
     "@types/download": "^8.0.5",
     "@types/node": "^22.7.7",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
     "concurrently": "^9.0.1",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.8",
     "serve": "^14.2.4"
   }
 }
