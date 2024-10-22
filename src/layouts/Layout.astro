@@ -1,6 +1,5 @@
 ---
 import { basics } from "@cv";
-import Vengeance from "@/layouts/Vengeance.astro";
 
 interface Props {
   title: string;
@@ -40,8 +39,6 @@ const imageUrl = `${Astro.site?.origin}${image}`;
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Itim"
     />
-
-    <Vengeance />
   </head>
   <body data-theme={theme} class="relative bg-skin-fill">
     <div class="absolute top-0 -z-10 h-full w-full print:hidden">
