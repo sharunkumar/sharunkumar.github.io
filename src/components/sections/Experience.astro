@@ -46,6 +46,11 @@ import { work } from "@cv"
               <div class="mt-4 print:gap-0 flex flex-col gap-4 print:text-xs text-sm" x-data="{ expanded: false }">
                 {summary && <ExperienceSubSection title="Summary" content={summary} />}
 
+                <div class="print:block hidden">
+                  {responsibilities && <ExperienceSubSection title="Responsibilities" content={responsibilities} />}
+                  {achievements && <ExperienceSubSection title="Achievements" content={achievements} />}
+                </div>
+
                 {(responsibilities || achievements) && (
                 <div x-show="expanded" x-collapse class="flex flex-col gap-4">
                   {responsibilities && <ExperienceSubSection title="Responsibilities" content={responsibilities} />}
