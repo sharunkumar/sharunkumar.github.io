@@ -11,6 +11,8 @@ import Skills from "@/components/sections/Skills.astro";
 import KeyboardManager from "@/components/KeyboardManager.astro";
 
 import { basics } from "@cv";
+import { GithubCalendarComponent } from "@/components/GithubCalendarComponent";
+import Section from "@/components/Section.astro";
 const { name, label } = basics;
 ---
 
@@ -31,6 +33,9 @@ const { name, label } = basics;
       <Skills className="print:hidden" />
       <Projects className="print:hidden" />
       <Education className="order-first" />
+      <Section title="Github Activity" className="print:hidden">
+        <GithubCalendarComponent client:only="react" />
+      </Section>
     </div>
     <!-- <Tail /> -->
   </main>
