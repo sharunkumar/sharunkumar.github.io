@@ -27,12 +27,15 @@ const { name, label } = basics;
       <About />
     </div>
     <div
-      class="space-y-12 md:col-span-4 print:col-span-1 print:grid print:grid-cols-4 print:gap-2 print:space-y-0"
+      class="space-y-12 md:col-span-4 print:col-span-1 print:grid print:grid-cols-4 print:gap-4 print:space-y-0"
     >
       <Experience className="print:col-span-3" />
       <Skills className="print:hidden" />
       <Projects className="print:hidden" />
-      <Education className="order-first" />
+      <div class="order-first">
+        <Education />
+        <Skills className="hidden print:block" />
+      </div>
       <Section title="Github Activity" className="max-sm:hidden print:hidden">
         <GithubCalendarComponent client:only="react" />
       </Section>
