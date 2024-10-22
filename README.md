@@ -1,10 +1,13 @@
-## Print-friendly portfolio CV
+## Portfolio/CV
 
 ## 🛠️ Stack & Tech
 
-- [**Astro**](https://astro.build/) - The next-gen web framework.
-- [**Typescript**](https://www.typescriptlang.org/) - JavaScript with type syntax.
-- [**Ninja Keys**](https://github.com/ssleptsov/ninja-keys) - Dropdown menu with keyboard shortcuts made in pure JavaScript.
+- [**Astro**](https://astro.build/) - The web framework for content-driven websites.
+- [**React**](https://reactjs.org/) - A JavaScript library for building user interfaces.
+- [**Typescript**](https://www.typescriptlang.org/) - JavaScript with syntax for types.
+- [**Tailwind CSS**](https://tailwindcss.com/) - A utility-first CSS framework.
+- [**Hotkeypad**](https://github.com/jesubohr/hotkeypad) - Lightweight keyboard shortcut interface for your website.
+- [**React GitHub Calendar**](https://github.com/grubersjoe/react-github-calendar) - A React component to display a GitHub contributions calendar.
 
 ## 🚀 Getting Started
 
@@ -12,7 +15,13 @@
 
 Edit the `cv.json` file to create your own printable Portfolio/CV.
 
-### Fetch your avatar & generate site-images from Github
+### Install Dependencies:
+
+```bash
+bun install
+```
+
+### Fetch your Avatar & Generate site-images from GitHub
 
 Copy .env.example to .env and fill in the details.
 
@@ -25,23 +34,24 @@ bun src/scripts/generate-favicons.ts
 ### Launch the Development Server:
 
 ```bash
-bun install
 bun dev
 ```
 
-1. Open [**http://localhost:4321**](http://localhost:4321/) in your browser to view the result 🚀
+Open [**http://localhost:4321**](http://localhost:4321/) in your browser to view the result 🚀
 
-### 4. Customisable colours:
+### Previewing the built version of the site
 
-Change the data-theme of `cv.json` and choose one of the colour themes defined in theme.css, red, blue, green, cyber and default, with its variants in dark mode, or create your own.
+#### local-only:
 
-## 🧞 Commands
+```bash
+bun serve
+```
 
-|     | Command         | Action                                                         |
-| :-- | :-------------- | :------------------------------------------------------------- |
-| ⚙️  | `dev` o `start` | Launches a local development server at `localhost:4321`.       |
-| ⚙️  | `build`         | Checks for errors and creates a production build in `./dist/`. |
-| ⚙️  | `preview`       | Local preview at `localhost:4321`                              |
+#### via cloudflare tunnel:
+
+```bash
+bun serve:public
+```
 
 ---
 
