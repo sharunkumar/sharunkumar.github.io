@@ -27,6 +27,7 @@ const imageUrl = `${Astro.site?.origin}${image}`;
     <meta property="og:title" content={title} />
     <meta property="og:description" content={summary} />
     <meta property="og:image" content={imageUrl} />
+    <meta property="og:logo" content={imageUrl} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="twitter:domain" content={url.split("//")[1] ?? ""} />
