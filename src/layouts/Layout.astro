@@ -7,9 +7,13 @@ interface Props {
 
 const { title } = Astro.props;
 
-const { image, summary, url, theme } = basics;
+const { image, summary, url, theme, profiles } = basics;
 
 const imageUrl = `${Astro.site?.origin}${image}`;
+
+const twitterUsername = `@${
+  profiles.find((profile) => profile.network === "X")?.username
+}`;
 ---
 
 <!doctype html>
@@ -35,6 +39,7 @@ const imageUrl = `${Astro.site?.origin}${image}`;
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={summary} />
     <meta name="twitter:image" content={imageUrl} />
+    <meta name="twitter:site" content={twitterUsername} />
 
     <link
       rel="stylesheet"

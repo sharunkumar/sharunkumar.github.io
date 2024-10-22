@@ -8,7 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "serve": "astro build && astro preview",
+    "serve": "astro build && astro preview --host",
     "serve:cloudflared": "cloudflared tunnel --url http://localhost:4321/",
     "serve:public": "concurrently --prefix-colors=auto bun:serve bun:serve:cloudflared",
     "generate:favicons": "bun src/scripts/generate-favicons.ts"
