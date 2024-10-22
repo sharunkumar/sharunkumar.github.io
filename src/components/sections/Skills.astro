@@ -1,19 +1,20 @@
 ---
 import Section from "../Section.astro";
-import {SoftwareSkillsIcons} from "@/icons/software-skills-icons"
-
+import { SoftwareSkillsIcons } from "@/icons/software-skills-icons";
 ---
 
 <Section className={Astro.props.className} title="Skills">
-	<ul class="[&>li>svg]:text-skin-hue inline-flex flex-wrap gap-4 [&>li>svg]:size-5 [&>li]:text-sm">
-		{
-			Object.entries(SoftwareSkillsIcons).map(([name,Icon]) => {
-				return (
-					<li class="border-skin-hue/20s bg-skin-button-accent/20s borders border-solids flex items-center gap-2 rounded-md px-2 py-0.5 text-xs text-skin-muted print:border-none print:bg-transparent print:p-0 print:text-zinc-800">
-						<Icon /> <span class="text-skin-base">{name}</span>
-					</li>
-				);
-			})
-		}
-	</ul>
+  <ul
+    class="inline-flex flex-wrap gap-4 [&>li>svg]:size-5 [&>li>svg]:text-skin-hue [&>li]:text-sm"
+  >
+    {
+      Object.entries(SoftwareSkillsIcons).map(([name, Icon]) => {
+        return (
+          <li class="border-skin-hue/20s bg-skin-button-accent/20s borders border-solids flex items-center gap-2 rounded-md px-2 py-0.5 text-xs text-skin-muted print:border-none print:bg-transparent print:p-0 print:text-zinc-800">
+            <Icon /> <span class="text-skin-base">{name}</span>
+          </li>
+        );
+      })
+    }
+  </ul>
 </Section>
