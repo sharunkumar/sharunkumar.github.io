@@ -11,7 +11,8 @@
     "serve": "astro build && astro preview --host",
     "serve:cloudflared": "cloudflared tunnel --url http://localhost:4321/",
     "serve:public": "concurrently --prefix-colors=auto bun:serve bun:serve:cloudflared",
-    "generate:favicons": "bun src/scripts/generate-favicons.ts"
+    "generate:favicons": "bun src/scripts/generate-favicons.ts",
+    "postinstall": "astro telemetry disable"
   },
   "dependencies": {
     "@astrojs/check": "0.9.4",
