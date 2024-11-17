@@ -27,6 +27,11 @@
         "url": "https://x.com/roonshady"
       },
       {
+        "network": "BlueSky",
+        "username": "sharunkumar.com",
+        "url": "https://bsky.app/profile/sharunkumar.com"
+      },
+      {
         "network": "GitHub",
         "username": "sharunkumar",
         "url": "https://github.com/sharunkumar"
