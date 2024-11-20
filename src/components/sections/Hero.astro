@@ -77,7 +77,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ");
 						const Icon = SOCIAL_ICONS[network];
 
 						return (
-							<a href={url} title={`Visit my profile on ${network}`} target="_blank" rel="noopener noreferrer">
+							<a href={url} title={`Visit my profile on ${network}`} data-network={network} target="_blank" rel="noopener noreferrer">
 								<Icon />
 							</a>
 						);
