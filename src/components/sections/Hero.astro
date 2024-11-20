@@ -10,6 +10,7 @@ import type { SocialIcon } from "@/types";
 import { FaMapLocationDot } from "react-icons/fa6";
 import BlueSky from "@/icons/BlueSky.astro";
 import Instagram from "@/icons/Instagram.astro";
+import Threads from "@/icons/Threads.astro";
 
 const { name, label, image, location, profiles, phone, email } = basics;
 const { city, region } = location;
@@ -20,6 +21,7 @@ const SOCIAL_ICONS: SocialIcon = {
 	X,
 	BlueSky,
 	Instagram,
+	Threads,
 };
 
 const linkedInfo = profiles.find(({ network }) => network === "LinkedIn");

@@ -3,6 +3,7 @@ import "hotkeypad/reset.css";
 import "hotkeypad/index.css";
 import { type SocialIcon } from "@/types";
 import { basics } from "@cv";
+import X from "@/icons/X.astro";
 
 const { profiles } = basics;
 
@@ -43,19 +44,21 @@ const SOCIAL_ICONS: SocialIcon = {
 `,
 };
 
-const profilesInfo = profiles.map(({ network, url }) => {
-  const icon = SOCIAL_ICONS[network];
-  const firstLetter = network[0].toUpperCase();
+const profilesInfo = profiles
+  .map(({ network, url }) => {
+    const icon = SOCIAL_ICONS[network];
+    const firstLetter = network[0].toUpperCase();
 
-  return {
-    id: network,
-    section: "Social",
-    title: `Visit ${network}`,
-    url,
-    icon,
-    hotkey: `ctrl+${firstLetter}`,
-  };
-});
+    return {
+      id: network,
+      section: "Social",
+      title: `Visit ${network}`,
+      url,
+      icon,
+      hotkey: `ctrl+${firstLetter}`,
+    };
+  })
+  .filter((x) => !x.hotkey.match(/[TNW]$/i)); // filter out reserved hotkeys
 ---
 
 <footer id="normal-footer" class="no-print flex flex-col gap-2 text-skin-base">
