@@ -37,14 +37,14 @@ const myGithubProjects = await fetchAllProjects(projects);
                 </a>
               </div>
 
-              <p class="py-3 text-sm text-skin-base">{description}</p>
+              <p class="py-3 text-sm text-skin-muted">{description}</p>
               <div
                 class="flex flex-wrap gap-2 print:hidden"
                 aria-label="Technologies used"
               >
                 {Object.keys(languages).map((lang) => {
                   return (
-                    <span class="flex items-center gap-1 rounded-md border border-solid border-skin-hue/20 bg-skin-button-accent/20 px-2 py-0.5 text-xs text-skin-hue print:border-none print:bg-transparent print:p-0 print:text-zinc-800">
+                    <span class="flex items-center gap-1 rounded-md border border-solid border-skin-hue/20 bg-skin-button-accent/20 px-2 py-0.5 text-xs text-skin-base print:border-none print:bg-transparent print:p-0 print:text-zinc-800">
                       {lang}
                     </span>
                   );
