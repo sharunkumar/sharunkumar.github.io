@@ -1,5 +1,6 @@
 ---
 import { basics } from "@cv";
+import Snowfall from "react-snowfall";
 
 interface Props {
   title: string;
@@ -61,6 +62,7 @@ const twitterUsername = `@${
       >
       </div>
     </div>
+    <Snowfall client:only="react" />
     <slot />
     <style is:global>
       body,
