@@ -2,23 +2,21 @@
 import { ExperienceSubSection } from "../ExperienceSubSection"
 import Section from "../Section.astro"
 import { work } from "@cv"
+import { ExperienceYear } from "./ExperienceYear"
 
 ---
 <Section className={Astro.props.className} title="Experience">
   <ul class="flex flex-col">
     {work.map(({ name, startDate, endDate, position, summary, responsibilities, achievements, url, skills, location, location_type }) => {
-      const startYear = new Date(startDate).getUTCFullYear()
-      const endYear = endDate != null ? new Date(endDate).getUTCFullYear() : "Present"
-
       return (
         <li class="relative print:py-2">
           <div class="group relative grid pb-1 print:pb-0 transition-all print:grid-cols-1 print:gap-1 sm:grid-cols-12 sm:gap-8 md:gap-6 lg:hover:!opacity-100 ">
             <header class="relative mt-1 text-xs font-semibold sm:col-span-2">
-              <span class="text-skin-base">
-                <time datetime={startDate} data-title={startDate}>{startYear}</time> - <time datetime={endDate} data-title={endDate}>{endYear}</time>
-              </span>
+              <div class="text-skin-base flex justify-end mr-4">
+                <ExperienceYear startDate={startDate} endDate={endDate} />
+              </div>
             </header>
-            <div class="relative flex flex-col pb-6 print:pb-0 before:-ml-6 sm:col-span-10 before:w-px print:before:hidden before:absolute before:bg-skin-muted before:h-full before:mt-2">
+            <div class="relative flex flex-col pb-4 print:pb-0 before:-ml-6 sm:col-span-10 before:w-px print:before:hidden before:absolute before:bg-skin-muted before:h-full before:mt-2">
             <div class="absolute w-2 h-2 bg-skin-muted rounded-full mt-2 -translate-x-[1.71rem] ring print:hidden ring-skin-fill"></div>
               <h3>
                 <div class="inline-flex items-center text-lg print:text-base leading-tight group/link focus-visible:text-amber-500" aria-label="{position} - {company}">
@@ -58,18 +56,18 @@ import { work } from "@cv"
                   {achievements && <ExperienceSubSection title="Achievements" content={achievements} />}
                 </div>
                 )}
-                <button @click="expanded = !expanded" class="print:hidden group/more w-fit cursor-pointer items-center justify-center text-skin-muted gap-1.5 text-xs underline transition-all hover:text-skin-base flex">
+                {(responsibilities || achievements) ? <button @click="expanded = !expanded" class="print:hidden group/more w-fit cursor-pointer items-center justify-center text-skin-muted gap-1.5 text-xs underline transition-all hover:text-skin-base flex">
                   <span x-text="expanded ? 'Show less' : 'Responsibilities & Achievements'"></span>
                   <svg class="w-4 h-4 group-hover/more:translate-y-0.5 duration-200 ease-out" :class="{ 'rotate-180': expanded }" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                </button>
+                </button> : null}
                 <ul class="flex print:hidden flex-wrap gap-2" aria-label="Technologies used">
-                  {skills && skills.map(skill => {
+                  {skills && skills.length ? skills.map(skill => {
                     return (
                       <li class="bg-skin-button-accent/20 border-skin-hue/20 text-skin-base print:p-0 print:bg-transparent print:text-zinc-800 flex gap-1 items-center border-solid print:border-none border rounded-md px-2 py-0.5 text-xs">
                         <span>{skill}</span>
                       </li>
                     )
-                  })}
+                  }) : null}
                 </ul>
               </div>
             </div>

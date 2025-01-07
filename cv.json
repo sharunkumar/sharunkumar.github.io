@@ -51,6 +51,15 @@
   "work": [
     {
       "name": "Tesla",
+      "position": "Fullstack Engineer",
+      "location_type": "On site",
+      "location": "Fremont, CA, USA",
+      "url": "https://www.tesla.com/",
+      "startDate": "2025-01-06",
+      "skills": []
+    },
+    {
+      "name": "Tesla",
       "position": "Fullstack Developer Co-op",
       "location_type": "On site",
       "location": "Fremont, CA, USA",
