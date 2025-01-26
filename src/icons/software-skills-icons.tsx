@@ -1,5 +1,5 @@
-import { BiLogoGit, BiLogoPostgresql } from "react-icons/bi";
-import { DiVisualstudio } from "react-icons/di";
+import { BiLogoPostgresql } from "react-icons/bi";
+import { DiMsqlServer } from "react-icons/di";
 import {
   FaCss3,
   FaDocker,
@@ -10,27 +10,20 @@ import {
   FaHtml5,
   FaJava,
   FaJenkins,
-  FaLinux,
   FaNodeJs,
   FaPython,
   FaReact,
   FaRust,
   FaSass,
-  FaServer,
-  FaWindows,
 } from "react-icons/fa6";
 import { IoLogoJavascript } from "react-icons/io5";
 import {
-  SiCsharp,
   SiGnubash,
-  SiHono,
-  SiMicrosoftsqlserver,
   SiMongodb,
   SiNextdotjs,
-  SiPowershell,
   SiTypescript,
 } from "react-icons/si";
-import { VscVscode } from "react-icons/vsc";
+import { TbBrandCSharp, TbBrandPowershell } from "react-icons/tb";
 
 export const SoftwareSkillsIcons = {
   "Next.js": SiNextdotjs,
@@ -44,7 +37,7 @@ export const SoftwareSkillsIcons = {
   HTML5: FaHtml5,
   CSS3: FaCss3,
   SASS: FaSass,
-  "C#": SiCsharp,
+  "C#": TbBrandCSharp,
   Java: FaJava,
   Rust: FaRust,
   Python: FaPython,
@@ -55,12 +48,12 @@ export const SoftwareSkillsIcons = {
   // "Visual Studio": DiVisualstudio,
   // VSCode: VscVscode,
   Figma: FaFigma,
-  "SQL Server": SiMicrosoftsqlserver,
+  "SQL Server": DiMsqlServer,
   PostgreSQL: BiLogoPostgresql,
   MongoDB: SiMongodb,
   Docker: FaDocker,
   Bash: SiGnubash,
-  PowerShell: SiPowershell,
+  PowerShell: TbBrandPowershell,
   // Linux: FaLinux,
   // Windows: FaWindows,
 };
