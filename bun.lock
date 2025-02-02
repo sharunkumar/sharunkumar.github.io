@@ -11,7 +11,7 @@
         "astro": "5.2.1",
         "download": "^8.0.0",
         "favicons": "^7.2.0",
-        "hotkeypad": "0.1.1",
+        "hotkeypad": "0.1.2",
         "nullthrows": "^1.1.1",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
@@ -694,7 +694,7 @@
 
     "hastscript": ["hastscript@8.0.0", "", { "dependencies": { "@types/hast": "^3.0.0", "comma-separated-tokens": "^2.0.0", "hast-util-parse-selector": "^4.0.0", "property-information": "^6.0.0", "space-separated-tokens": "^2.0.0" } }, "sha512-dMOtzCEd3ABUeSIISmrETiKuyydk1w0pa+gE/uormcTpSYuaNJPbX1NU3JLyscSLjwAQM8bWMhhIlnCqnRvDTw=="],
 
-    "hotkeypad": ["hotkeypad@0.1.1", "", {}, "sha512-v8e9aByI1ReBX30bL/+dHQwsg+UGZaU4WXEWv72DG74h7fSToUm0udXam5tDCns4NsmWLXKzAL3Rjd9FfTjGXw=="],
+    "hotkeypad": ["hotkeypad@0.1.2", "", {}, "sha512-nb1eRpt/firYI079/J99RvOt+4l3SAHI2GyPY2EOs9q9RFPsEsaQOMFHfi1MVRPhhgaLBaOp8095JkZoGu+kJg=="],
 
     "html-escaper": ["html-escaper@3.0.3", "", {}, "sha512-RuMffC89BOWQoY0WKGpIhn5gX3iI54O6nRA0yC124NYVtzjmFWBIiFd8M0x+ZdX0P9R4lADg1mgP8C7PxGOWuQ=="],
 
