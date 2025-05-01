@@ -22,7 +22,7 @@
     "astro": "5.7.10",
     "download": "^8.0.0",
     "favicons": "^7.2.0",
-    "hotkeypad": "1.0.1",
+    "hotkeypad": "1.0.2",
     "nullthrows": "^1.1.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
