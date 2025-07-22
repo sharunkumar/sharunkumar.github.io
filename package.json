@@ -19,7 +19,7 @@
     "@astrojs/react": "^4.1.6",
     "@astrojs/tailwind": "^6.0.0",
     "@octokit/rest": "^22.0.0",
-    "astro": "5.12.1",
+    "astro": "5.12.2",
     "download": "^8.0.0",
     "favicons": "^7.2.0",
     "hotkeypad": "1.0.2",
