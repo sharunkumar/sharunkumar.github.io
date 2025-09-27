@@ -22,12 +22,14 @@ import {
   SiMongodb,
   SiNextdotjs,
   SiTypescript,
+  SiVite,
 } from "react-icons/si";
 import { TbBrandCSharp, TbBrandPowershell } from "react-icons/tb";
 
 export const SoftwareSkillsIcons = {
   "Next.js": SiNextdotjs,
   "Node.js": FaNodeJs,
+  Vite: SiVite,
   React: FaReact,
   TypeScript: SiTypescript,
   JavaScript: IoLogoJavascript,
