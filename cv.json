@@ -61,17 +61,6 @@
         "Improved website performance by optimizing Next.js and Golang code",
         "Streamlined deployment processes using GitHub CI and Docker"
       ],
-      "responsibilities": [
-        "Developed and maintained web applications using Next.js for the frontend and Golang for the backend. Collaborated with the team to implement new features and fix bugs.",
-        "Assisted in debugging and optimizing front-end and back-end code to ensure smooth user experiences.",
-        "Participated in code reviews and contributed to improving coding standards within the team.",
-        "Implemented and maintained CI/CD pipelines using GitHub CI for automated testing and deployment.",
-        "Containerized applications using Docker for consistent development and production environments."
-      ],
-      "achievements": [
-        "Was part of the core team that successfully completed a critical project within a tight deadline, demonstrating strong teamwork and high engineering throughput.",
-        "Contributed high volume of PRs and quality code, consistently delivering value to the team and project."
-      ],
       "skills": [
         "Next.js",
         "Golang",
@@ -89,7 +78,18 @@
       "location": "Fremont, CA, USA",
       "url": "https://www.tesla.com/",
       "startDate": "2024-01-08",
-      "endDate": "2024-08-30"
+      "endDate": "2024-08-30",
+      "responsibilities": [
+        "Developed and maintained web applications using Next.js for the frontend and Golang for the backend. Collaborated with the team to implement new features and fix bugs.",
+        "Assisted in debugging and optimizing front-end and back-end code to ensure smooth user experiences.",
+        "Participated in code reviews and contributed to improving coding standards within the team.",
+        "Implemented and maintained CI/CD pipelines using GitHub CI for automated testing and deployment.",
+        "Containerized applications using Docker for consistent development and production environments."
+      ],
+      "achievements": [
+        "Was part of the core team that successfully completed a critical project within a tight deadline, demonstrating strong teamwork and high engineering throughput.",
+        "Contributed high volume of PRs and quality code, consistently delivering value to the team and project."
+      ]
     },
     {
       "name": "GoFrugal Technologies",
