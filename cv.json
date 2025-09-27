@@ -56,16 +56,6 @@
       "location": "Fremont, CA, USA",
       "url": "https://www.tesla.com/",
       "startDate": "2025-01-06",
-      "skills": []
-    },
-    {
-      "name": "Tesla",
-      "position": "Fullstack Developer Co-op",
-      "location_type": "On site",
-      "location": "Fremont, CA, USA",
-      "url": "https://www.tesla.com/",
-      "startDate": "2024-01-08",
-      "endDate": "2024-08-30",
       "summary": "Developing and maintaining web applications using Next.js for the frontend and Golang for the backend. Collaborating with the team to implement new features and fix bugs. Working extensively with GitHub CI and Docker for deployment and containerization.",
       "highlights": [
         "Improved website performance by optimizing Next.js and Golang code",
@@ -91,6 +81,15 @@
         "Docker",
         "Jenkins"
       ]
+    },
+    {
+      "name": "Tesla",
+      "position": "Fullstack Developer Co-op",
+      "location_type": "On site",
+      "location": "Fremont, CA, USA",
+      "url": "https://www.tesla.com/",
+      "startDate": "2024-01-08",
+      "endDate": "2024-08-30"
     },
     {
       "name": "GoFrugal Technologies",
