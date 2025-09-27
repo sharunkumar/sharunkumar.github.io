@@ -17,18 +17,24 @@ import {
   FaSass,
 } from "react-icons/fa6";
 import { IoLogoJavascript } from "react-icons/io5";
+import { RiTailwindCssFill } from "react-icons/ri";
 import {
   SiGnubash,
   SiMongodb,
   SiNextdotjs,
+  SiReactrouter,
   SiTypescript,
+  SiVite,
 } from "react-icons/si";
 import { TbBrandCSharp, TbBrandPowershell } from "react-icons/tb";
 
 export const SoftwareSkillsIcons = {
-  "Next.js": SiNextdotjs,
   "Node.js": FaNodeJs,
+  Vite: SiVite,
+  "React Router": SiReactrouter,
+  Tailwind: RiTailwindCssFill,
   React: FaReact,
+  "Next.js": SiNextdotjs,
   TypeScript: SiTypescript,
   JavaScript: IoLogoJavascript,
   Golang: FaGolang,

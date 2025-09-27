@@ -13,4 +13,7 @@
     },
     "color-highlight.enable": true,
     "color-highlight.matchRgbWithNoFunction": true,
+    "[json]": {
+        "editor.formatOnSave": true,
+    },
 }
