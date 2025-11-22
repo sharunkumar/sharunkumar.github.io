@@ -1,4 +1,4 @@
-import GitHubCalendar from "react-github-calendar";
+import {GitHubCalendar} from "react-github-calendar";
 import nullthrows from "nullthrows";
 import { basics } from "@cv";
 
@@ -15,7 +15,7 @@ export function GithubCalendarComponent() {
         theme={{
           dark: ["hsl(0, 0%, 22%)", "rgb(var(--color))"],
         }}
-        hideMonthLabels
+        showMonthLabels={false}
       />
     </div>
   );
