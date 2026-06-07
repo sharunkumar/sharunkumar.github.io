@@ -103,28 +103,28 @@ const nav = [
         </div>
       </div>
 
-      <div class="reveal relative mx-auto w-full max-w-xs" style="--d:.25s">
-        <div class="glass glass-hover relative overflow-hidden rounded-[2rem] p-3">
+      <div class="reveal relative mx-auto w-full max-w-40" style="--d:.25s">
+        <div class="glass glass-hover relative overflow-hidden rounded-[1.5rem] p-2">
           <img
             src={basics.image}
             alt={basics.name}
             width="320"
             height="320"
-            class="aspect-square w-full rounded-[1.5rem] object-cover"
+            class="aspect-square w-full rounded-[1rem] object-cover"
           />
         </div>
         <div
-          class="glass absolute -bottom-5 -left-5 rounded-2xl px-4 py-3 font-mono"
+          class="glass absolute -bottom-4 -left-4 rounded-2xl px-3 py-2 font-mono"
         >
-          <div class="text-2xl font-semibold text-accent">{years}+</div>
-          <div class="text-[0.7rem] uppercase tracking-widest text-faint">
+          <div class="text-xl font-semibold text-accent">{years}+</div>
+          <div class="text-[0.6rem] uppercase tracking-widest text-faint">
             years shipping
           </div>
         </div>
         <div
-          class="glass absolute -right-4 top-6 flex items-center gap-2 rounded-full px-3 py-2 text-xs text-muted"
+          class="glass absolute -right-3 top-4 flex items-center gap-1.5 rounded-full px-2.5 py-1.5 text-[0.7rem] text-muted"
         >
-          <span class="[&_svg]:size-3.5 text-accent"><LuMapPin /></span>
+          <span class="[&_svg]:size-3 text-accent"><LuMapPin /></span>
           {city}, {region}
         </div>
       </div>

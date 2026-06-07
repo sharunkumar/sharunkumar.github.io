@@ -41,14 +41,14 @@ const lastName = basics.name.split(" ").slice(-1)[0];
       </div>
     </header>
 
-    <section class="grid grid-cols-1 gap-10 py-12 md:grid-cols-[1fr_1.4fr]">
+    <section class="grid grid-cols-1 gap-10 py-12 md:grid-cols-[auto_1fr]">
       <figure class="reveal" style="--d:.05s">
         <img
           src={basics.image}
           alt={basics.name}
           width="640"
           height="640"
-          class="w-full border rule object-cover grayscale"
+          class="w-full max-w-[13rem] border rule object-cover grayscale"
         />
         <figcaption class="kicker mt-2 text-faint">
           Fig. 1 — {basics.name}, {issueDate}
