@@ -4,6 +4,10 @@ dist/
 # generated types
 .astro/
 
+# vite+ task cache
+.vite-plus/
+*.tsbuildinfo
+
 # dependencies
 node_modules/
 

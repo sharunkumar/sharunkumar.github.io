@@ -2,6 +2,9 @@
   "name": "minimalist-portfolio-json",
   "type": "module",
   "version": "0.0.1",
+  "workspaces": [
+    "next/*"
+  ],
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -12,7 +15,11 @@
     "serve:cloudflared": "cloudflared tunnel --url http://localhost:4321/",
     "serve:public": "concurrently --prefix-colors=auto bun:serve bun:serve:cloudflared",
     "generate:favicons": "bun src/scripts/generate-favicons.ts",
-    "postinstall": "astro telemetry disable"
+    "postinstall": "astro telemetry disable",
+    "next:dev": "vp run --parallel --filter \"./next/*\" dev",
+    "next:dev:cc": "concurrently -k -c auto -n aurora,terminal,editorial,monolith \"cd next/aurora && bun run dev\" \"cd next/terminal && bun run dev\" \"cd next/editorial && bun run dev\" \"cd next/monolith && bun run dev\"",
+    "next:build": "vp run --filter \"./next/*\" build",
+    "next:check": "vp check"
   },
   "dependencies": {
     "@astrojs/check": "0.9.9",
@@ -42,6 +49,8 @@
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.8.0",
-    "serve": "^14.2.5"
-  }
+    "serve": "^14.2.5",
+    "vite-plus": "0.1.24"
+  },
+  "packageManager": "bun@1.3.14"
 }
