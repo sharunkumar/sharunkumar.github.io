@@ -1,0 +1,244 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { basics, work, education } from "@next/shared/cv";
+import { socials, email } from "@next/shared/socials";
+import { skillGroups, skillsByGroup } from "@next/shared/skills";
+import { getProjects } from "@next/shared/projects";
+import { dateRange, getYear } from "@next/shared/utils";
+
+const projects = getProjects();
+const { city, region } = basics.location;
+const issueDate = new Date().toLocaleDateString("en-US", {
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+});
+const lastName = basics.name.split(" ").slice(-1)[0];
+---
+
+<Layout>
+  <main class="mx-auto max-w-6xl px-5 md:px-10">
+    <header class="reveal pt-8">
+      <div
+        class="kicker flex items-center justify-between border-b rule pb-2 text-faint"
+      >
+        <span>Portfolio</span>
+        <span class="hidden sm:block">{issueDate}</span>
+        <span>Vol. 01</span>
+      </div>
+
+      <h1
+        class="font-display mt-6 text-center text-[18vw] font-black uppercase leading-[0.82] tracking-[-0.02em] md:text-[10rem]"
+      >
+        {basics.name}
+      </h1>
+
+      <div
+        class="kicker mt-6 flex items-center justify-between border-t border-b rule py-2"
+      >
+        <span>{basics.label}</span>
+        <span class="text-accent">{city}, {region}</span>
+      </div>
+    </header>
+
+    <section class="grid grid-cols-1 gap-10 py-12 md:grid-cols-[1fr_1.4fr]">
+      <figure class="reveal" style="--d:.05s">
+        <img
+          src={basics.image}
+          alt={basics.name}
+          width="640"
+          height="640"
+          class="w-full border rule object-cover grayscale"
+        />
+        <figcaption class="kicker mt-2 text-faint">
+          Fig. 1 — {basics.name}, {issueDate}
+        </figcaption>
+      </figure>
+
+      <div class="reveal" style="--d:.12s">
+        <p class="font-display text-3xl leading-[1.15] md:text-4xl">
+          {basics.label} crafting apps &amp; services across web, desktop, and
+          mobile.
+        </p>
+        <p class="dropcap editorial-columns mt-6 text-ink-soft">
+          {basics.summary}
+        </p>
+        <nav class="kicker mt-8 flex flex-wrap gap-x-6 gap-y-2">
+          <a href={`mailto:${email}`} class="link-rule">Email</a>
+          {
+            socials.map((social) => (
+              <a
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="link-rule"
+              >
+                {social.network}
+              </a>
+            ))
+          }
+        </nav>
+      </div>
+    </section>
+
+    <section id="experience" class="border-t-2 border-ink py-10">
+      <div class="mb-8 flex items-end justify-between">
+        <h2 class="font-display text-5xl font-semibold md:text-6xl">
+          Experience
+        </h2>
+        <span class="font-display text-5xl text-faint md:text-6xl">01</span>
+      </div>
+
+      <div>
+        {
+          work.map((job) => (
+            <article class="grid grid-cols-1 gap-x-8 gap-y-2 border-t rule py-7 md:grid-cols-[7rem_1fr]">
+              <div class="kicker pt-2 text-faint">
+                {getYear(job.startDate)}
+                <span class="text-accent">—</span>
+                {job.endDate ? getYear(job.endDate) : "Now"}
+              </div>
+              <div>
+                <h3 class="font-display text-3xl leading-tight md:text-4xl">
+                  {job.position}
+                </h3>
+                <p class="kicker mt-1 mb-3">
+                  {job.url ? (
+                    <a
+                      href={job.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="link-rule text-accent"
+                    >
+                      {job.name}
+                    </a>
+                  ) : (
+                    <span class="text-accent">{job.name}</span>
+                  )}
+                  {(job.location || job.location_type) && (
+                    <span class="text-faint">
+                      {"  ·  "}
+                      {[job.location, job.location_type]
+                        .filter(Boolean)
+                        .join(", ")}
+                    </span>
+                  )}
+                </p>
+                {job.summary && (
+                  <p class="max-w-2xl text-ink-soft">{job.summary}</p>
+                )}
+                {job.skills && job.skills.length > 0 && (
+                  <p class="kicker mt-3 text-faint">
+                    {job.skills.join("  /  ")}
+                  </p>
+                )}
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section id="projects" class="border-t-2 border-ink py-10">
+      <div class="mb-8 flex items-end justify-between">
+        <h2 class="font-display text-5xl font-semibold md:text-6xl">
+          Selected Works
+        </h2>
+        <span class="font-display text-5xl text-faint md:text-6xl">02</span>
+      </div>
+
+      <div>
+        {
+          projects.map((project, index) => (
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group grid grid-cols-[2.5rem_1fr] items-baseline gap-x-5 border-t rule py-6 md:grid-cols-[3.5rem_1fr_8rem]"
+            >
+              <span class="font-display text-2xl text-faint md:text-3xl">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <div>
+                <h3 class="font-display text-2xl leading-tight transition-colors group-hover:text-accent md:text-3xl">
+                  {project.title}
+                </h3>
+                <p class="mt-1 max-w-2xl text-ink-soft">{project.description}</p>
+                <p class="kicker mt-2 text-faint">
+                  {project.languages.join("  /  ")}
+                </p>
+              </div>
+              <span class="kicker hidden self-center text-right text-accent md:block">
+                View &nearr;
+              </span>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+
+    <section id="skills" class="border-t-2 border-ink py-10">
+      <div class="mb-8 flex items-end justify-between">
+        <h2 class="font-display text-5xl font-semibold md:text-6xl">
+          Capabilities
+        </h2>
+        <span class="font-display text-5xl text-faint md:text-6xl">03</span>
+      </div>
+
+      <dl>
+        {
+          skillGroups.map((group) => (
+            <div class="grid grid-cols-1 gap-x-8 border-t rule py-5 md:grid-cols-[10rem_1fr]">
+              <dt class="kicker pt-1 text-accent">{group}</dt>
+              <dd class="font-display text-xl leading-relaxed md:text-2xl">
+                {skillsByGroup(group)
+                  .map((skill) => skill.name)
+                  .join(", ")}
+              </dd>
+            </div>
+          ))
+        }
+      </dl>
+    </section>
+
+    <section id="education" class="border-t-2 border-ink py-10">
+      <div class="mb-8 flex items-end justify-between">
+        <h2 class="font-display text-5xl font-semibold md:text-6xl">
+          Education
+        </h2>
+        <span class="font-display text-5xl text-faint md:text-6xl">04</span>
+      </div>
+      {
+        education.map((school) => (
+          <div class="grid grid-cols-1 gap-x-8 border-t rule py-5 md:grid-cols-[7rem_1fr]">
+            <div class="kicker pt-2 text-faint">
+              {dateRange(school.startDate, school.endDate)}
+            </div>
+            <div>
+              <h3 class="font-display text-2xl md:text-3xl">
+                {school.institution}
+              </h3>
+              <p class="text-ink-soft">
+                {school.studyType} — {school.area}
+              </p>
+            </div>
+          </div>
+        ))
+      }
+    </section>
+
+    <footer
+      class="border-t-2 border-ink py-12 text-center"
+    >
+      <p class="kicker text-faint">The End — Colophon</p>
+      <p class="font-display mx-auto mt-5 max-w-2xl text-3xl leading-tight md:text-4xl">
+        For commissions &amp; correspondence, write to
+        <a href={`mailto:${email}`} class="link-rule text-accent">{email}</a>.
+      </p>
+      <p class="kicker mt-8 text-faint">
+        Set in Bodoni Moda &amp; Newsreader · Astro · Tailwind v4 · Vite+ ·
+        &copy; {new Date().getFullYear()} {lastName}
+      </p>
+    </footer>
+  </main>
+</Layout>
