@@ -25,10 +25,10 @@ export const versions: Version[] = [
     index: 2,
     name: "Terminal",
     tagline: "A bootable, typeable developer console",
-    aesthetic: "Terminal / TUI",
+    aesthetic: "Terminal / Catppuccin",
     port: 4322,
     url: "http://localhost:4322",
-    accent: "#ffb000",
+    accent: "#cba6f7",
   },
   {
     id: "editorial",

@@ -1,32 +1,82 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #0a0b0a;
-  --color-panel: #0f110f;
-  --color-phosphor: #ffb000;
-  --color-phosphor-dim: #8a6212;
-  --color-term: #d8d2c0;
-  --color-term-dim: #7c7a6b;
-  --color-prompt: #57d977;
-  --color-error: #ff5f56;
+  --color-bg: var(--ctp-base);
+  --color-panel: var(--ctp-mantle);
+  --color-crust: var(--ctp-crust);
+  --color-surface: var(--ctp-surface);
+  --color-term: var(--ctp-text);
+  --color-term-dim: var(--ctp-subtext);
+  --color-accent: var(--ctp-accent);
+  --color-overlay: var(--ctp-overlay);
+  --color-prompt: var(--ctp-green);
+  --color-error: var(--ctp-red);
+  --color-link: var(--ctp-blue);
 
   --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 @layer base {
+  :root {
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    --ctp-surface: #313244;
+    --ctp-overlay: #6c7086;
+    --ctp-subtext: #a6adc8;
+    --ctp-text: #cdd6f4;
+    --ctp-accent: #cba6f7;
+    --ctp-green: #a6e3a1;
+    --ctp-red: #f38ba8;
+    --ctp-blue: #89b4fa;
+  }
+
+  html[data-theme="macchiato"] {
+    --ctp-base: #24273a;
+    --ctp-mantle: #1e2030;
+    --ctp-crust: #181926;
+    --ctp-surface: #363a4f;
+    --ctp-overlay: #6e738d;
+    --ctp-subtext: #a5adcb;
+    --ctp-text: #cad3f5;
+    --ctp-accent: #c6a0f6;
+    --ctp-green: #a6da95;
+    --ctp-red: #ed8796;
+    --ctp-blue: #8aadf4;
+  }
+
+  html[data-theme="frappe"] {
+    --ctp-base: #303446;
+    --ctp-mantle: #292c3c;
+    --ctp-crust: #232634;
+    --ctp-surface: #414559;
+    --ctp-overlay: #737994;
+    --ctp-subtext: #a5adce;
+    --ctp-text: #c6d0f5;
+    --ctp-accent: #ca9ee6;
+    --ctp-green: #a6d189;
+    --ctp-red: #e78284;
+    --ctp-blue: #8caaee;
+  }
+
+  html[data-theme="latte"] {
+    --ctp-base: #eff1f5;
+    --ctp-mantle: #e6e9ef;
+    --ctp-crust: #dce0e8;
+    --ctp-surface: #ccd0da;
+    --ctp-overlay: #9ca0b0;
+    --ctp-subtext: #6c6f85;
+    --ctp-text: #4c4f69;
+    --ctp-accent: #8839ef;
+    --ctp-green: #40a02b;
+    --ctp-red: #d20f39;
+    --ctp-blue: #1e66f5;
+    color-scheme: light;
+  }
+
   html {
-    background: #050605;
+    background: var(--ctp-crust);
     color-scheme: dark;
-  }
-  html[data-crt="green"] {
-    --color-phosphor: #3bf08a;
-    --color-phosphor-dim: #1f9e57;
-    --color-prompt: #57d977;
-  }
-  html[data-crt="ice"] {
-    --color-phosphor: #67e8f9;
-    --color-phosphor-dim: #2b8c9c;
-    --color-prompt: #9fe7ff;
   }
 
   body {
@@ -40,12 +90,12 @@
   }
 
   ::selection {
-    background: var(--color-phosphor);
-    color: #000;
+    background: var(--color-accent);
+    color: var(--color-bg);
   }
 
   a {
-    color: var(--color-phosphor);
+    color: var(--color-link);
     text-decoration: none;
   }
 
@@ -54,12 +104,13 @@
     height: 10px;
   }
   ::-webkit-scrollbar-thumb {
-    background: #20231f;
+    background: var(--color-surface);
+    border-radius: 999px;
   }
 }
 
 .glow {
-  text-shadow: 0 0 8px color-mix(in oklab, var(--color-phosphor) 55%, transparent);
+  text-shadow: 0 0 5px color-mix(in oklab, var(--color-accent) 20%, transparent);
 }
 
 .scanlines::after {
@@ -72,8 +123,8 @@
     to bottom,
     rgba(0, 0, 0, 0) 0,
     rgba(0, 0, 0, 0) 2px,
-    rgba(0, 0, 0, 0.16) 3px,
-    rgba(0, 0, 0, 0.16) 3px
+    rgba(0, 0, 0, 0.05) 3px,
+    rgba(0, 0, 0, 0.05) 3px
   );
   mix-blend-mode: multiply;
 }
@@ -85,30 +136,10 @@
   z-index: 49;
   pointer-events: none;
   background: radial-gradient(
-    120% 120% at 50% 50%,
-    transparent 55%,
-    rgba(0, 0, 0, 0.55) 100%
+    130% 130% at 50% 50%,
+    transparent 60%,
+    rgba(0, 0, 0, 0.22) 100%
   );
-  animation: flicker 5s infinite steps(60);
-}
-
-@keyframes flicker {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  92% {
-    opacity: 1;
-  }
-  93% {
-    opacity: 0.86;
-  }
-  94% {
-    opacity: 1;
-  }
-  97% {
-    opacity: 0.92;
-  }
 }
 
 .caret-blink {
@@ -131,9 +162,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .vignette::before {
-    animation: none;
-  }
   .boot > * {
     opacity: 1;
     animation: none;

@@ -14,10 +14,20 @@ const pageDescription = description ?? basics.summary;
 ---
 
 <!doctype html>
-<html lang="en" data-crt="amber">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>
+      try {
+        document.documentElement.setAttribute(
+          "data-theme",
+          localStorage.getItem("terminal-flavor") || "mocha",
+        );
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "mocha");
+      }
+    </script>
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
