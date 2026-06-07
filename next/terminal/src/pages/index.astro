@@ -55,14 +55,14 @@ const banner = String.raw`
           <Cmd cmd="whoami" />
           <pre
             aria-hidden="true"
-            class="glow overflow-x-auto text-accent text-[10px] leading-tight sm:text-xs">{banner}</pre>
+            class="glow overflow-hidden text-accent text-[10px] leading-tight sm:text-xs">{banner}</pre>
           <div class="mt-2 text-lg text-accent glow">{basics.name}</div>
           <div class="text-term">{basics.label}</div>
           <div class="text-term-dim">// {city}, {region}</div>
 
           <section>
             <Cmd cmd="cat about.md" />
-            <p class="max-w-2xl text-term">{basics.summary}</p>
+            <p class="text-term">{basics.summary}</p>
           </section>
 
           <section>
@@ -98,7 +98,7 @@ const banner = String.raw`
                       </div>
                     )}
                     {job.summary && (
-                      <p class="max-w-2xl text-term">{job.summary}</p>
+                      <p class="text-term">{job.summary}</p>
                     )}
                     {job.skills && job.skills.length > 0 && (
                       <div class="mt-1 flex flex-wrap gap-x-3 text-term-dim">
@@ -137,7 +137,7 @@ const banner = String.raw`
                         ({project.languages.join(" / ")})
                       </span>
                     </div>
-                    <p class="max-w-2xl pl-4 text-term-dim">
+                    <p class="pl-4 text-term-dim">
                       {project.description}
                     </p>
                   </div>
@@ -184,7 +184,7 @@ const banner = String.raw`
 
           <section>
             <Cmd cmd="contact --links" />
-            <div class="mt-2 grid max-w-xl grid-cols-[7rem_1fr] gap-x-3 gap-y-1">
+            <div class="mt-2 grid grid-cols-[7rem_1fr] gap-x-3 gap-y-1">
               <span class="text-accent">email</span>
               <a
                 href={`mailto:${email}`}
