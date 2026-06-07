@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-paper: #f4f1e9;
-  --color-paper-2: #eae4d6;
-  --color-ink: #17140f;
-  --color-ink-soft: #463f35;
-  --color-faint: #8b8475;
-  --color-accent: #d6451f;
-  --color-rule: rgba(23, 20, 15, 0.18);
+  --color-paper: #131210;
+  --color-paper-2: #1c1a16;
+  --color-ink: #ece5d6;
+  --color-ink-soft: #b0a795;
+  --color-faint: #786f60;
+  --color-accent: #f15a36;
+  --color-rule: rgba(236, 229, 214, 0.16);
 
   --font-display: "Bodoni Moda", ui-serif, Georgia, "Times New Roman", serif;
   --font-serif: "Newsreader", ui-serif, Georgia, serif;
@@ -17,7 +17,7 @@
 @layer base {
   html {
     background: var(--color-paper);
-    color-scheme: light;
+    color-scheme: dark;
   }
 
   body {
@@ -55,8 +55,8 @@
   z-index: -1;
   pointer-events: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
-  opacity: 0.05;
-  mix-blend-mode: multiply;
+  opacity: 0.06;
+  mix-blend-mode: overlay;
 }
 
 .kicker {
