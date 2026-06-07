@@ -52,15 +52,17 @@
   }
 }
 
-.brut {
-  border: 3px solid var(--color-ink);
-  box-shadow: 6px 6px 0 0 var(--color-ink);
-  background: var(--color-paper);
-}
+@layer components {
+  .brut {
+    border: 3px solid var(--color-ink);
+    box-shadow: 6px 6px 0 0 var(--color-ink);
+    background: var(--color-paper);
+  }
 
-.brut-sm {
-  border: 2px solid var(--color-ink);
-  box-shadow: 3px 3px 0 0 var(--color-ink);
+  .brut-sm {
+    border: 2px solid var(--color-ink);
+    box-shadow: 3px 3px 0 0 var(--color-ink);
+  }
 }
 
 .press {
