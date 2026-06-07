@@ -1,0 +1,26 @@
+{
+  "name": "@next/aurora",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/react": "5.0.7",
+    "@next/shared": "workspace:*",
+    "@tailwindcss/vite": "4.3.0",
+    "astro": "6.4.4",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "react-icons": "5.6.0",
+    "tailwindcss": "4.3.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.6",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^6.0.3"
+  }
+}

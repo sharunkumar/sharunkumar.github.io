@@ -1,0 +1,337 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { basics, work, education } from "@next/shared/cv";
+import { socials, email } from "@next/shared/socials";
+import { skillGroups, skillsByGroup } from "@next/shared/skills";
+import { getProjects } from "@next/shared/projects";
+import { dateRange, totalExperienceYears } from "@next/shared/utils";
+import {
+  LuArrowUpRight,
+  LuMapPin,
+  LuMail,
+  LuArrowDown,
+} from "react-icons/lu";
+
+const projects = getProjects();
+const years = totalExperienceYears();
+const { city, region } = basics.location;
+const nav = [
+  { label: "Work", href: "#work" },
+  { label: "Projects", href: "#projects" },
+  { label: "Stack", href: "#stack" },
+  { label: "Contact", href: "#contact" },
+];
+---
+
+<Layout>
+  <div class="relative mx-auto max-w-5xl px-6">
+    <header
+      class="reveal flex items-center justify-between py-7 text-sm"
+      style="--d:0s"
+    >
+      <a href="#top" class="font-mono tracking-tight text-ink">
+        sharun<span class="text-accent">.</span>
+      </a>
+      <nav class="hidden gap-7 font-mono text-muted sm:flex">
+        {
+          nav.map((item) => (
+            <a href={item.href} class="link-underline hover:text-ink">
+              {item.label}
+            </a>
+          ))
+        }
+      </nav>
+      <a
+        href={`mailto:${email}`}
+        class="rounded-full border border-line bg-bg-soft/60 px-4 py-2 font-mono text-xs text-ink transition hover:border-accent/50 hover:text-accent"
+      >
+        get in touch
+      </a>
+    </header>
+
+    <section
+      id="top"
+      class="grid grid-cols-1 items-center gap-12 pb-20 pt-10 md:grid-cols-[1.4fr_1fr] md:pt-16"
+    >
+      <div>
+        <p
+          class="reveal mb-6 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.3em] text-muted"
+          style="--d:.05s"
+        >
+          <span class="relative flex h-2 w-2">
+            <span
+              class="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60"
+            ></span>
+            <span class="relative inline-flex h-2 w-2 rounded-full bg-accent"
+            ></span>
+          </span>
+          Open to new problems
+        </p>
+        <h1
+          class="reveal font-display text-6xl leading-[0.92] tracking-tight text-ink sm:text-7xl md:text-8xl"
+          style="--d:.1s"
+        >
+          {basics.name}
+        </h1>
+        <p
+          class="reveal mt-5 max-w-xl text-lg leading-relaxed text-muted"
+          style="--d:.2s"
+        >
+          {basics.label} crafting products across web, desktop &amp; mobile.
+          {basics.summary}
+        </p>
+
+        <div
+          class="reveal mt-8 flex flex-wrap items-center gap-3"
+          style="--d:.3s"
+        >
+          <a
+            href={`mailto:${email}`}
+            class="group inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-bg transition hover:bg-accent-2"
+          >
+            <span class="[&_svg]:size-4"><LuMail /></span>
+            Email me
+          </a>
+          <div
+            class="flex items-center gap-1 rounded-full border border-line bg-bg-soft/50 p-1.5 text-muted [&_svg]:size-[1.05rem]"
+          >
+            {
+              socials.map((social) => {
+                const Icon = social.Icon;
+                return (
+                  <a
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.network}
+                    title={social.network}
+                    class="rounded-full p-2 transition hover:bg-white/5 hover:text-accent"
+                  >
+                    <Icon />
+                  </a>
+                );
+              })
+            }
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal relative mx-auto w-full max-w-xs" style="--d:.25s">
+        <div class="glass glass-hover relative overflow-hidden rounded-[2rem] p-3">
+          <img
+            src={basics.image}
+            alt={basics.name}
+            width="320"
+            height="320"
+            class="aspect-square w-full rounded-[1.5rem] object-cover"
+          />
+        </div>
+        <div
+          class="glass absolute -bottom-5 -left-5 rounded-2xl px-4 py-3 font-mono"
+        >
+          <div class="text-2xl font-semibold text-accent">{years}+</div>
+          <div class="text-[0.7rem] uppercase tracking-widest text-faint">
+            years shipping
+          </div>
+        </div>
+        <div
+          class="glass absolute -right-4 top-6 flex items-center gap-2 rounded-full px-3 py-2 text-xs text-muted"
+        >
+          <span class="[&_svg]:size-3.5 text-accent"><LuMapPin /></span>
+          {city}, {region}
+        </div>
+      </div>
+    </section>
+
+    <a
+      href="#work"
+      class="reveal mx-auto mb-24 flex w-fit items-center gap-2 font-mono text-xs uppercase tracking-[0.3em] text-faint transition hover:text-accent"
+      style="--d:.4s"
+    >
+      scroll <span class="animate-bounce [&_svg]:size-3.5"><LuArrowDown /></span>
+    </a>
+
+    <section id="work" class="border-t border-line py-20">
+      <div class="mb-12 flex items-baseline justify-between">
+        <h2 class="font-display text-4xl text-ink sm:text-5xl">Experience</h2>
+        <span class="font-mono text-xs uppercase tracking-widest text-faint"
+          >01 — career</span
+        >
+      </div>
+
+      <div class="flex flex-col">
+        {
+          work.map((job, index) => (
+            <article
+              class="group relative grid grid-cols-1 gap-2 border-t border-line py-8 transition sm:grid-cols-[8rem_1fr] sm:gap-8"
+            >
+              <div class="font-mono text-sm text-accent">
+                {dateRange(job.startDate, job.endDate)}
+              </div>
+              <div>
+                <h3 class="text-xl text-ink">
+                  <span>{job.position}</span>
+                  <span class="text-faint"> · </span>
+                  {job.url ? (
+                    <a
+                      href={job.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center gap-1 text-accent link-underline"
+                    >
+                      {job.name}
+                      <span class="[&_svg]:size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                        <LuArrowUpRight />
+                      </span>
+                    </a>
+                  ) : (
+                    <span class="text-accent">{job.name}</span>
+                  )}
+                </h3>
+                {(job.location || job.location_type) && (
+                  <p class="mt-1 font-mono text-xs text-faint">
+                    {[job.location, job.location_type]
+                      .filter(Boolean)
+                      .join(" — ")}
+                  </p>
+                )}
+                {job.summary && (
+                  <p class="mt-3 max-w-2xl text-sm leading-relaxed text-muted">
+                    {job.summary}
+                  </p>
+                )}
+                {job.skills && job.skills.length > 0 && (
+                  <ul class="mt-4 flex flex-wrap gap-2">
+                    {job.skills.map((skill) => (
+                      <li class="rounded-full border border-line px-3 py-1 font-mono text-[0.7rem] text-muted">
+                        {skill}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+              <span class="pointer-events-none absolute left-0 top-8 hidden text-[0.7rem] font-mono text-faint sm:block">
+                0{index + 1}
+              </span>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section id="projects" class="border-t border-line py-20">
+      <div class="mb-12 flex items-baseline justify-between">
+        <h2 class="font-display text-4xl text-ink sm:text-5xl">
+          Selected work
+        </h2>
+        <span class="font-mono text-xs uppercase tracking-widest text-faint"
+          >02 — open source</span
+        >
+      </div>
+
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        {
+          projects.map((project) => (
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="glass glass-hover group flex flex-col p-6"
+            >
+              <div class="flex items-start justify-between gap-4">
+                <h3 class="font-display text-2xl text-ink">{project.title}</h3>
+                <span class="mt-1 text-faint transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 [&_svg]:size-5">
+                  <LuArrowUpRight />
+                </span>
+              </div>
+              <p class="mt-3 flex-1 text-sm leading-relaxed text-muted">
+                {project.description}
+              </p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                {project.languages.map((lang) => (
+                  <span class="rounded-full bg-white/5 px-2.5 py-1 font-mono text-[0.7rem] text-faint">
+                    {lang}
+                  </span>
+                ))}
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+
+    <section id="stack" class="border-t border-line py-20">
+      <div class="mb-12 flex items-baseline justify-between">
+        <h2 class="font-display text-4xl text-ink sm:text-5xl">Toolkit</h2>
+        <span class="font-mono text-xs uppercase tracking-widest text-faint"
+          >03 — stack</span
+        >
+      </div>
+
+      <div class="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2">
+        {
+          skillGroups.map((group) => (
+            <div class="bg-bg p-6">
+              <h3 class="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-accent">
+                {group}
+              </h3>
+              <ul class="flex flex-wrap gap-2.5">
+                {skillsByGroup(group).map((skill) => {
+                  const Icon = skill.Icon;
+                  return (
+                    <li class="flex items-center gap-2 rounded-lg border border-line bg-bg-soft/60 px-3 py-1.5 text-sm text-muted transition hover:border-accent/40 hover:text-ink [&_svg]:size-4 [&_svg]:text-accent">
+                      <Icon />
+                      {skill.name}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        {
+          education.map((school) => (
+            <div class="flex items-baseline justify-between gap-4 border-t border-line py-4">
+              <div>
+                <h3 class="text-ink">{school.institution}</h3>
+                <p class="text-sm text-muted">
+                  {school.studyType} · {school.area}
+                </p>
+              </div>
+              <span class="font-mono text-xs text-faint">
+                {dateRange(school.startDate, school.endDate)}
+              </span>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <section id="contact" class="border-t border-line py-24 text-center">
+      <p class="font-mono text-xs uppercase tracking-[0.3em] text-accent">
+        04 — say hello
+      </p>
+      <h2
+        class="mx-auto mt-6 max-w-3xl font-display text-5xl leading-tight text-ink sm:text-6xl"
+      >
+        Let&rsquo;s build something worth shipping.
+      </h2>
+      <a
+        href={`mailto:${email}`}
+        class="mt-10 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-semibold text-bg transition hover:bg-accent-2"
+      >
+        <span class="[&_svg]:size-4"><LuMail /></span>
+        {email}
+      </a>
+      <footer
+        class="mt-20 flex flex-col items-center gap-2 font-mono text-xs text-faint"
+      >
+        <p>Astro · Tailwind v4 · Vite+ · one of four takes</p>
+        <p>&copy; {new Date().getFullYear()} {basics.name}</p>
+      </footer>
+    </section>
+  </div>
+</Layout>
