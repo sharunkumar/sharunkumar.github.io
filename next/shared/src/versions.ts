@@ -18,7 +18,7 @@ export const versions: Version[] = [
     aesthetic: "Cinematic / Glassmorphism",
     port: 4321,
     url: "http://localhost:4321",
-    accent: "#5eead4",
+    accent: "#ff4040",
   },
   {
     id: "terminal",
@@ -38,7 +38,7 @@ export const versions: Version[] = [
     aesthetic: "Editorial / Print",
     port: 4323,
     url: "http://localhost:4323",
-    accent: "#e4572e",
+    accent: "#f15a36",
   },
   {
     id: "monolith",
