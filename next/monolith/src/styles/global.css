@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f4eee1;
+  --color-ink: #111110;
+  --color-cobalt: #2f6df6;
+  --color-tomato: #ff5436;
+  --color-sun: #ffd23e;
+  --color-lime: #b9f73e;
+  --color-grape: #b388ff;
+
+  --font-display: "Syne", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+@layer base {
+  html {
+    background: var(--color-paper);
+    color-scheme: light;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-mono);
+    -webkit-font-smoothing: antialiased;
+    background-image: radial-gradient(
+      var(--color-ink) 1.1px,
+      transparent 1.1px
+    );
+    background-size: 22px 22px;
+    background-position: -11px -11px;
+  }
+
+  ::selection {
+    background: var(--color-sun);
+    color: var(--color-ink);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    margin: 0;
+  }
+}
+
+.brut {
+  border: 3px solid var(--color-ink);
+  box-shadow: 6px 6px 0 0 var(--color-ink);
+  background: var(--color-paper);
+}
+
+.brut-sm {
+  border: 2px solid var(--color-ink);
+  box-shadow: 3px 3px 0 0 var(--color-ink);
+}
+
+.press {
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease;
+}
+.press:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 3px 3px 0 0 var(--color-ink);
+}
+.press:active {
+  transform: translate(6px, 6px);
+  box-shadow: 0 0 0 0 var(--color-ink);
+}
+
+.marquee {
+  overflow: hidden;
+  border-top: 3px solid var(--color-ink);
+  border-bottom: 3px solid var(--color-ink);
+}
+.marquee__track {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: marquee 26s linear infinite;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee:hover .marquee__track {
+  animation-play-state: paused;
+}
+
+.pop-in {
+  opacity: 0;
+  animation: pop 0.5s cubic-bezier(0.2, 1.4, 0.5, 1) forwards;
+  animation-delay: var(--d, 0s);
+}
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: translateY(16px) rotate(-1deg);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track {
+    animation: none;
+  }
+  .pop-in {
+    opacity: 1;
+    animation: none;
+  }
+}
