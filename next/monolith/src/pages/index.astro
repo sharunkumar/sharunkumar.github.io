@@ -2,7 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import { basics, work, education } from "@next/shared/cv";
 import { socials, email } from "@next/shared/socials";
-import { skillGroups, skillsByGroup, skills } from "@next/shared/skills";
+import { skillGroups, skillsByGroup } from "@next/shared/skills";
 import { getProjects } from "@next/shared/projects";
 import { dateRange, getYear, totalExperienceYears } from "@next/shared/utils";
 
@@ -110,24 +110,7 @@ const badges = [
       {basics.summary}
     </div>
 
-    <div class="marquee my-12 -mx-4 bg-tomato sm:-mx-6">
-      <div class="marquee__track py-3">
-        {
-          [0, 1].map(() => (
-            <span class="flex items-center">
-              {skills.map((skill) => (
-                <span class="flex items-center font-display text-2xl font-extrabold uppercase text-paper">
-                  <span class="px-5">{skill.name}</span>
-                  <span class="text-ink">★</span>
-                </span>
-              ))}
-            </span>
-          ))
-        }
-      </div>
-    </div>
-
-    <section id="experience" class="py-6">
+    <section id="experience" class="py-10">
       <h2
         class="brut mb-8 inline-block bg-ink px-4 py-2 text-3xl uppercase text-paper sm:text-4xl"
       >

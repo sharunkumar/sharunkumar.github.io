@@ -79,26 +79,6 @@
   box-shadow: 0 0 0 0 var(--color-ink);
 }
 
-.marquee {
-  overflow: hidden;
-  border-top: 3px solid var(--color-ink);
-  border-bottom: 3px solid var(--color-ink);
-}
-.marquee__track {
-  display: inline-flex;
-  align-items: center;
-  white-space: nowrap;
-  animation: marquee 26s linear infinite;
-}
-@keyframes marquee {
-  to {
-    transform: translateX(-50%);
-  }
-}
-.marquee:hover .marquee__track {
-  animation-play-state: paused;
-}
-
 .pop-in {
   opacity: 0;
   animation: pop 0.5s cubic-bezier(0.2, 1.4, 0.5, 1) forwards;
@@ -116,9 +96,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .marquee__track {
-    animation: none;
-  }
   .pop-in {
     opacity: 1;
     animation: none;
