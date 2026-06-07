@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0a0b0a;
+  --color-panel: #0f110f;
+  --color-phosphor: #ffb000;
+  --color-phosphor-dim: #8a6212;
+  --color-term: #d8d2c0;
+  --color-term-dim: #7c7a6b;
+  --color-prompt: #57d977;
+  --color-error: #ff5f56;
+
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+@layer base {
+  html {
+    background: #050605;
+    color-scheme: dark;
+  }
+  html[data-crt="green"] {
+    --color-phosphor: #3bf08a;
+    --color-phosphor-dim: #1f9e57;
+    --color-prompt: #57d977;
+  }
+  html[data-crt="ice"] {
+    --color-phosphor: #67e8f9;
+    --color-phosphor-dim: #2b8c9c;
+    --color-prompt: #9fe7ff;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-term);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--color-phosphor);
+    color: #000;
+  }
+
+  a {
+    color: var(--color-phosphor);
+    text-decoration: none;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #20231f;
+  }
+}
+
+.glow {
+  text-shadow: 0 0 8px color-mix(in oklab, var(--color-phosphor) 55%, transparent);
+}
+
+.scanlines::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0.16) 3px,
+    rgba(0, 0, 0, 0.16) 3px
+  );
+  mix-blend-mode: multiply;
+}
+
+.vignette::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 49;
+  pointer-events: none;
+  background: radial-gradient(
+    120% 120% at 50% 50%,
+    transparent 55%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+  animation: flicker 5s infinite steps(60);
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 1;
+  }
+  93% {
+    opacity: 0.86;
+  }
+  94% {
+    opacity: 1;
+  }
+  97% {
+    opacity: 0.92;
+  }
+}
+
+.caret-blink {
+  animation: caret 1.05s steps(1) infinite;
+}
+@keyframes caret {
+  50% {
+    opacity: 0;
+  }
+}
+
+.boot > * {
+  opacity: 0;
+  animation: appear 0.01s linear forwards;
+}
+@keyframes appear {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vignette::before {
+    animation: none;
+  }
+  .boot > * {
+    opacity: 1;
+    animation: none;
+  }
+}

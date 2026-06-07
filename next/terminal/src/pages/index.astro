@@ -1,0 +1,221 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Cmd from "@/components/Cmd.astro";
+import { Console } from "@/components/Console";
+import { basics, work, education } from "@next/shared/cv";
+import { socials, email } from "@next/shared/socials";
+import { skillGroups, skillsByGroup } from "@next/shared/skills";
+import { getProjects } from "@next/shared/projects";
+import { dateRange } from "@next/shared/utils";
+
+const projects = getProjects();
+const { city, region } = basics.location;
+
+const banner = String.raw`
+ ____  _   _    _    ____  _   _ _   _ 
+/ ___|| | | |  / \  |  _ \| | | | \ | |
+\___ \| |_| | / _ \ | |_) | | | |  \| |
+ ___) |  _  |/ ___ \|  _ <| |_| | |\  |
+|____/|_| |_/_/   \_\_| \_\\___/|_| \_|
+`;
+---
+
+<Layout>
+  <main class="mx-auto max-w-4xl px-3 py-6 sm:px-5 sm:py-10">
+    <div
+      class="overflow-hidden rounded-xl border border-phosphor/25 bg-panel shadow-[0_0_80px_-25px_var(--color-phosphor)]"
+    >
+      <div
+        class="flex items-center gap-2 border-b border-phosphor/15 bg-black/40 px-4 py-3"
+      >
+        <span class="h-3 w-3 rounded-full bg-[#ff5f56]"></span>
+        <span class="h-3 w-3 rounded-full bg-[#ffbd2e]"></span>
+        <span class="h-3 w-3 rounded-full bg-[#27c93f]"></span>
+        <span
+          class="flex-1 text-center text-xs text-term-dim"
+          >sharun@portfolio: ~ — zsh</span
+        >
+        <span class="text-xs text-term-dim">80×24</span>
+      </div>
+
+      <div class="boot p-4 sm:p-7">
+        <div class="text-term-dim">
+          <Cmd cmd="./portfolio --boot" />
+          <div><span class="text-prompt">[ ok ]</span> mounting resume.json</div>
+          <div>
+            <span class="text-prompt">[ ok ]</span> linking /experience /projects
+            /skills
+          </div>
+          <div><span class="text-prompt">[ ok ]</span> ready in 0.42s</div>
+        </div>
+
+        <Cmd cmd="whoami" />
+        <pre
+          aria-hidden="true"
+          class="glow overflow-x-auto text-phosphor text-[10px] leading-tight sm:text-xs">{banner}</pre>
+        <div class="mt-2 text-lg text-phosphor glow">{basics.name}</div>
+        <div class="text-term">{basics.label}</div>
+        <div class="text-term-dim">
+          // {city}, {region} · status: open to new problems
+        </div>
+
+        <section id="s-about">
+          <Cmd cmd="cat about.md" />
+          <p class="max-w-2xl text-term">{basics.summary}</p>
+        </section>
+
+        <section id="s-experience">
+          <Cmd cmd="ls -la ~/experience" />
+          <div class="mt-2 flex flex-col gap-5">
+            {
+              work.map((job) => (
+                <article>
+                  <div class="flex flex-wrap items-baseline gap-x-2">
+                    <span class="text-phosphor">{job.position}</span>
+                    <span class="text-term-dim">@</span>
+                    {job.url ? (
+                      <a
+                        href={job.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="underline decoration-phosphor/40 underline-offset-4 hover:decoration-phosphor"
+                      >
+                        {job.name}
+                      </a>
+                    ) : (
+                      <span class="text-term">{job.name}</span>
+                    )}
+                    <span class="text-term-dim">
+                      [{dateRange(job.startDate, job.endDate)}]
+                    </span>
+                  </div>
+                  {(job.location || job.location_type) && (
+                    <div class="text-term-dim">
+                      {[job.location, job.location_type]
+                        .filter(Boolean)
+                        .join(" — ")}
+                    </div>
+                  )}
+                  {job.summary && (
+                    <p class="max-w-2xl text-term">{job.summary}</p>
+                  )}
+                  {job.skills && job.skills.length > 0 && (
+                    <div class="mt-1 flex flex-wrap gap-x-3 text-term-dim">
+                      {job.skills.map((skill) => (
+                        <span>
+                          <span class="text-phosphor/60">[</span>
+                          {skill}
+                          <span class="text-phosphor/60">]</span>
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </article>
+              ))
+            }
+          </div>
+        </section>
+
+        <section id="s-projects">
+          <Cmd cmd="cat ~/projects/*.md" />
+          <div class="mt-2 flex flex-col gap-3">
+            {
+              projects.map((project) => (
+                <div>
+                  <div class="flex flex-wrap items-baseline gap-x-2">
+                    <span class="text-phosphor">▸</span>
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-term underline decoration-phosphor/40 underline-offset-4 hover:decoration-phosphor"
+                    >
+                      {project.title}
+                    </a>
+                    <span class="text-term-dim">
+                      ({project.languages.join(" / ")})
+                    </span>
+                  </div>
+                  <p class="max-w-2xl pl-4 text-term-dim">
+                    {project.description}
+                  </p>
+                </div>
+              ))
+            }
+          </div>
+        </section>
+
+        <section id="s-skills">
+          <Cmd cmd="skills --all" />
+          <div class="mt-2 flex flex-col gap-1.5">
+            {
+              skillGroups.map((group) => (
+                <div class="flex flex-wrap gap-x-2">
+                  <span class="w-28 shrink-0 text-phosphor">{group}</span>
+                  <span class="text-term">
+                    {skillsByGroup(group)
+                      .map((skill) => skill.name)
+                      .join("  ·  ")}
+                  </span>
+                </div>
+              ))
+            }
+          </div>
+        </section>
+
+        <section id="s-education">
+          <Cmd cmd="cat ~/education.txt" />
+          <div class="mt-2 flex flex-col gap-1">
+            {
+              education.map((school) => (
+                <div>
+                  <span class="text-term">{school.institution}</span>
+                  <span class="text-term-dim">
+                    {" "}
+                    — {school.studyType}, {school.area} (
+                    {dateRange(school.startDate, school.endDate)})
+                  </span>
+                </div>
+              ))
+            }
+          </div>
+        </section>
+
+        <section id="s-contact">
+          <Cmd cmd="contact --links" />
+          <div class="mt-2 grid max-w-xl grid-cols-[7rem_1fr] gap-x-3 gap-y-1">
+            <span class="text-phosphor">email</span>
+            <a
+              href={`mailto:${email}`}
+              class="underline decoration-phosphor/40 underline-offset-4 hover:decoration-phosphor"
+              >{email}</a
+            >
+            {
+              socials.map((social) => (
+                <>
+                  <span class="text-phosphor">{social.network.toLowerCase()}</span>
+                  <a
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="truncate underline decoration-phosphor/40 underline-offset-4 hover:decoration-phosphor"
+                  >
+                    {social.url}
+                  </a>
+                </>
+              ))
+            }
+          </div>
+        </section>
+
+        <div class="mt-7 border-t border-phosphor/15 pt-5">
+          <Console client:load />
+        </div>
+      </div>
+    </div>
+
+    <p class="mt-4 text-center text-xs text-term-dim">
+      Astro · Tailwind v4 · Vite+ · interactive — try typing a command
+    </p>
+  </main>
+</Layout>
