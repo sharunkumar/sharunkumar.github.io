@@ -5,6 +5,7 @@ import { socials, email } from "@next/shared/socials";
 import { skillGroups, skillsByGroup } from "@next/shared/skills";
 import { getProjects } from "@next/shared/projects";
 import { dateRange, getYear, totalExperienceYears } from "@next/shared/utils";
+import { LuSun, LuMoon } from "react-icons/lu";
 
 const projects = getProjects();
 const years = totalExperienceYears();
@@ -17,10 +18,9 @@ const accents = [
   { bg: "bg-lime", text: "text-ink" },
   { bg: "bg-grape", text: "text-ink" },
 ];
-const rotations = ["rotate-2", "-rotate-2", "rotate-1", "-rotate-1", "rotate-3"];
 const badges = [
-  { label: `${city}, ${region}`, cls: "bg-sun -rotate-2" },
-  { label: `${years}+ years`, cls: "bg-lime rotate-2" },
+  { label: `${city}, ${region}`, cls: "bg-sun text-ink -rotate-2" },
+  { label: `${years}+ years`, cls: "bg-lime text-ink rotate-2" },
   { label: "Open to work", cls: "bg-tomato text-paper -rotate-1" },
   { label: "Fullstack", cls: "bg-cobalt text-paper rotate-1" },
 ];
@@ -43,7 +43,7 @@ const badges = [
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.network}
-                  class="brut-sm press grid h-10 w-10 place-items-center bg-paper"
+                  class="brut-sm press grid h-10 w-10 place-items-center bg-bg"
                 >
                   <Icon />
                 </a>
@@ -51,9 +51,18 @@ const badges = [
             })
           }
         </div>
+        <button
+          id="theme-toggle"
+          type="button"
+          aria-label="Toggle dark mode"
+          class="brut-sm press grid h-10 w-10 place-items-center bg-bg [&_svg]:size-5"
+        >
+          <span class="theme-light"><LuMoon /></span>
+          <span class="theme-dark"><LuSun /></span>
+        </button>
         <a
           href={`mailto:${email}`}
-          class="brut press bg-sun px-4 py-2.5 font-display font-extrabold uppercase"
+          class="brut press bg-sun px-4 py-2.5 font-display font-extrabold uppercase text-ink"
         >
           Email →
         </a>
@@ -89,13 +98,13 @@ const badges = [
       </div>
 
       <div class="pop-in flex justify-center md:justify-end" style="--d:.12s">
-        <figure class="brut press w-full max-w-xs rotate-2 bg-paper p-2">
+        <figure class="brut press w-full max-w-xs rotate-2 bg-bg p-2">
           <img
             src={basics.image}
             alt={basics.name}
             width="320"
             height="320"
-            class="aspect-square w-full border-2 border-ink object-cover"
+            class="aspect-square w-full border-2 border-fg object-cover"
           />
           <figcaption
             class="mt-2 bg-ink py-1 text-center font-mono text-xs uppercase tracking-widest text-paper"
@@ -106,7 +115,7 @@ const badges = [
       </div>
     </section>
 
-    <div class="brut bg-paper p-5 text-base font-bold leading-relaxed sm:text-lg">
+    <div class="brut bg-bg p-5 text-base font-bold leading-relaxed sm:text-lg">
       {basics.summary}
     </div>
 
@@ -121,9 +130,9 @@ const badges = [
           work.map((job, index) => {
             const accent = accents[index % accents.length];
             return (
-              <article class="brut press grid grid-cols-1 bg-paper sm:grid-cols-[10rem_1fr]">
+              <article class="brut press grid grid-cols-1 bg-bg sm:grid-cols-[10rem_1fr]">
                 <div
-                  class={`flex flex-col justify-center border-b-2 border-ink p-4 sm:border-b-0 sm:border-r-[3px] ${accent.bg} ${accent.text}`}
+                  class={`flex flex-col justify-center border-b-2 border-fg p-4 sm:border-b-0 sm:border-r-[3px] ${accent.bg} ${accent.text}`}
                 >
                   <span class="font-display text-2xl font-extrabold leading-none">
                     {getYear(job.startDate)}
@@ -148,7 +157,7 @@ const badges = [
                       <span>{job.name}</span>
                     )}
                     {(job.location || job.location_type) && (
-                      <span class="text-ink/60">
+                      <span class="text-fg/60">
                         {"  ·  "}
                         {[job.location, job.location_type]
                           .filter(Boolean)
@@ -162,7 +171,7 @@ const badges = [
                   {job.skills && job.skills.length > 0 && (
                     <div class="mt-3 flex flex-wrap gap-2">
                       {job.skills.map((skill) => (
-                        <span class="brut-sm bg-paper px-2 py-0.5 font-mono text-xs font-bold">
+                        <span class="brut-sm bg-bg px-2 py-0.5 font-mono text-xs font-bold">
                           {skill}
                         </span>
                       ))}
@@ -191,10 +200,10 @@ const badges = [
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="brut press flex flex-col bg-paper"
+                class="brut press flex flex-col bg-bg"
               >
                 <div
-                  class={`flex items-center justify-between border-b-[3px] border-ink p-4 ${accent.bg} ${accent.text}`}
+                  class={`flex items-center justify-between border-b-[3px] border-fg p-4 ${accent.bg} ${accent.text}`}
                 >
                   <h3 class="text-xl uppercase">{project.title}</h3>
                   <span class="font-display text-xl font-extrabold">↗</span>
@@ -204,7 +213,7 @@ const badges = [
                 </p>
                 <div class="flex flex-wrap gap-2 p-4 pt-0">
                   {project.languages.map((lang) => (
-                    <span class="brut-sm bg-paper px-2 py-0.5 font-mono text-xs font-bold">
+                    <span class="brut-sm bg-bg px-2 py-0.5 font-mono text-xs font-bold">
                       {lang}
                     </span>
                   ))}
@@ -218,14 +227,14 @@ const badges = [
 
     <section id="skills" class="py-10">
       <h2
-        class="brut mb-8 inline-block bg-lime px-4 py-2 text-3xl uppercase sm:text-4xl"
+        class="brut mb-8 inline-block bg-lime px-4 py-2 text-3xl uppercase text-ink sm:text-4xl"
       >
         Toolkit
       </h2>
       <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
         {
           skillGroups.map((group, index) => (
-            <div class="brut bg-paper p-5">
+            <div class="brut bg-bg p-5">
               <h3
                 class={`mb-3 inline-block px-2 py-1 text-sm uppercase ${accents[index % accents.length].bg} ${accents[index % accents.length].text}`}
               >
@@ -235,7 +244,7 @@ const badges = [
                 {skillsByGroup(group).map((skill) => {
                   const Icon = skill.Icon;
                   return (
-                    <span class="brut-sm flex items-center gap-1.5 bg-paper px-2.5 py-1 font-mono text-sm font-bold [&_svg]:size-4">
+                    <span class="brut-sm flex items-center gap-1.5 bg-bg px-2.5 py-1 font-mono text-sm font-bold [&_svg]:size-4">
                       <Icon />
                       {skill.name}
                     </span>
@@ -250,15 +259,15 @@ const badges = [
 
     <section id="education" class="py-10">
       <h2
-        class="brut mb-8 inline-block bg-grape px-4 py-2 text-3xl uppercase sm:text-4xl"
+        class="brut mb-8 inline-block bg-grape px-4 py-2 text-3xl uppercase text-ink sm:text-4xl"
       >
         Education
       </h2>
       <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
         {
           education.map((school) => (
-            <div class="brut bg-paper p-5">
-              <span class="font-mono text-sm font-bold text-ink/60">
+            <div class="brut bg-bg p-5">
+              <span class="font-mono text-sm font-bold text-fg/60">
                 {dateRange(school.startDate, school.endDate)}
               </span>
               <h3 class="mt-1 text-2xl uppercase leading-tight">
@@ -308,4 +317,19 @@ const badges = [
       </p>
     </footer>
   </main>
+
+  <script>
+    const toggle = document.getElementById("theme-toggle");
+    toggle?.addEventListener("click", () => {
+      const root = document.documentElement;
+      const isDark = root.getAttribute("data-theme") === "dark";
+      if (isDark) {
+        root.removeAttribute("data-theme");
+        localStorage.setItem("monolith-theme", "light");
+      } else {
+        root.setAttribute("data-theme", "dark");
+        localStorage.setItem("monolith-theme", "dark");
+      }
+    });
+  </script>
 </Layout>

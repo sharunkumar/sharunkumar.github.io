@@ -3,6 +3,8 @@
 @theme {
   --color-paper: #f4eee1;
   --color-ink: #111110;
+  --color-bg: #f4eee1;
+  --color-fg: #111110;
   --color-cobalt: #2f6df6;
   --color-tomato: #ff5436;
   --color-sun: #ffd23e;
@@ -15,18 +17,24 @@
 
 @layer base {
   html {
-    background: var(--color-paper);
+    background: var(--color-bg);
     color-scheme: light;
+  }
+
+  html[data-theme="dark"] {
+    --color-bg: #161613;
+    --color-fg: #f4eee1;
+    color-scheme: dark;
   }
 
   body {
     margin: 0;
-    background: var(--color-paper);
-    color: var(--color-ink);
+    background: var(--color-bg);
+    color: var(--color-fg);
     font-family: var(--font-mono);
     -webkit-font-smoothing: antialiased;
     background-image: radial-gradient(
-      var(--color-ink) 1.1px,
+      color-mix(in oklab, var(--color-fg) 22%, transparent) 1.1px,
       transparent 1.1px
     );
     background-size: 22px 22px;
@@ -54,14 +62,14 @@
 
 @layer components {
   .brut {
-    border: 3px solid var(--color-ink);
-    box-shadow: 6px 6px 0 0 var(--color-ink);
-    background: var(--color-paper);
+    border: 3px solid var(--color-fg);
+    box-shadow: 6px 6px 0 0 var(--color-fg);
+    background: var(--color-bg);
   }
 
   .brut-sm {
-    border: 2px solid var(--color-ink);
-    box-shadow: 3px 3px 0 0 var(--color-ink);
+    border: 2px solid var(--color-fg);
+    box-shadow: 3px 3px 0 0 var(--color-fg);
   }
 }
 
@@ -72,11 +80,21 @@
 }
 .press:hover {
   transform: translate(3px, 3px);
-  box-shadow: 3px 3px 0 0 var(--color-ink);
+  box-shadow: 3px 3px 0 0 var(--color-fg);
 }
 .press:active {
   transform: translate(6px, 6px);
-  box-shadow: 0 0 0 0 var(--color-ink);
+  box-shadow: 0 0 0 0 var(--color-fg);
+}
+
+.theme-dark {
+  display: none;
+}
+html[data-theme="dark"] .theme-light {
+  display: none;
+}
+html[data-theme="dark"] .theme-dark {
+  display: inline;
 }
 
 .pop-in {
