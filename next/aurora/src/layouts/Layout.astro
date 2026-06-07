@@ -2,7 +2,6 @@
 import "@/styles/global.css";
 import { basics } from "@next/shared/cv";
 import { VersionSwitcher } from "@next/shared/react/version-switcher";
-import { Spotlight } from "@/components/Spotlight";
 
 interface Props {
   title?: string;
@@ -36,7 +35,6 @@ const pageDescription = description ?? basics.summary;
   <body>
     <div class="atmosphere"></div>
     <div class="grid-lines"></div>
-    <Spotlight client:idle />
     <slot />
     <VersionSwitcher current="aurora" client:load />
   </body>
