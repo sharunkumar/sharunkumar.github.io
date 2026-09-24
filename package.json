@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@astrojs/check": "0.9.10",
-    "@astrojs/react": "^6.0.0",
+    "@astrojs/react": "^7.0.0",
     "@astrojs/tailwind": "^6.0.2",
     "@octokit/rest": "^22.0.1",
     "astro": "7.3.4",
